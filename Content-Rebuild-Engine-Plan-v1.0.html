@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Content Rebuild Engine — Plan</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+:root{
+  --font-sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --fs-h1:32px;--lh-h1:40px;--fs-h2:28px;--lh-h2:36px;--fs-h3:20px;--lh-h3:28px;
+  --fs-body:16px;--lh-body:26px;--fs-sm:14px;--lh-sm:20px;--fs-xs:12px;--lh-xs:16px;
+  --color-primary:#008539;--color-primary-dark:#006B2D;--color-primary-light:#00A651;
+  --color-ink:#191919;--color-ink-muted:#333;--color-ink-faint:#555;
+  --color-surface:#fff;--color-surface-muted:#f8f8f8;--color-border:#e5e5e5;
+  --brand-50:#ecfdf3;
+  --radius-card:12px;--radius-pill:9999px;--shadow-card:0 1px 2px 0 rgb(0 0 0 / .05);
+}
+*{box-sizing:border-box;}
+html,body{margin:0;font-family:var(--font-sans);font-size:var(--fs-body);line-height:var(--lh-body);color:var(--color-ink);background:var(--color-surface);-webkit-font-smoothing:antialiased;}
+h1{font-size:var(--fs-h1);line-height:var(--lh-h1);font-weight:700;letter-spacing:-.01em;margin:0;}
+h2{font-size:var(--fs-h2);line-height:var(--lh-h2);font-weight:700;margin:0;}
+h3{font-size:var(--fs-h3);line-height:var(--lh-h3);font-weight:700;margin:0;}
+p{margin:0 0 14px;}
+.bar{background:var(--color-ink);color:#fff;}
+.bar-in{max-width:900px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.brandmark{display:flex;align-items:center;gap:12px;}
+.brandmark svg{width:26px;height:26px;display:block;}
+.brandmark .lbl{font-size:var(--fs-xs);font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.82);}
+.bar .ver{font-size:var(--fs-xs);font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.6);}
+.wrap{max-width:900px;margin:0 auto;padding:40px 24px 72px;}
+.hero{border-bottom:1px solid var(--color-border);padding-bottom:24px;margin-bottom:8px;}
+.hero h1{margin-bottom:12px;}
+.metarow{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:var(--radius-pill);font-size:var(--fs-xs);font-weight:600;line-height:1;}
+.pill-ink{background:var(--color-surface-muted);color:var(--color-ink-muted);border:1px solid var(--color-border);}
+.lead{color:var(--color-ink-muted);}
+h3.sec{font-size:var(--fs-h3);margin:22px 0 6px;}
+.protect{list-style:none;margin:6px 0 0;padding:0;}
+.protect li{padding:9px 14px;border-left:3px solid var(--color-primary);background:var(--color-surface-muted);border-radius:8px;margin-bottom:6px;font-size:var(--fs-sm);} .protect li b{color:var(--color-ink);}
+.note{background:var(--color-surface-muted);border:1px solid var(--color-border);border-radius:var(--radius-card);padding:14px 18px;font-size:var(--fs-sm);line-height:var(--lh-body);color:var(--color-ink-muted);margin:14px 0;} .note strong{color:var(--color-ink);}
+.callout{background:var(--brand-50);border:1px solid #b6e7c9;border-radius:var(--radius-card);padding:13px 18px;font-size:var(--fs-sm);line-height:var(--lh-body);color:var(--color-primary-dark);margin:14px 0;} .callout b{color:var(--color-ink);}
+table{width:100%;border-collapse:collapse;font-size:var(--fs-sm);margin:12px 0 6px;}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--color-border);vertical-align:top;}
+th{font-size:var(--fs-xs);text-transform:uppercase;letter-spacing:.06em;color:var(--color-ink-faint);}
+td.ph{font-weight:700;color:var(--color-primary-dark);white-space:nowrap;}
+td.dt{font-weight:700;white-space:nowrap;}
+td.ag{font-weight:600;color:var(--color-ink);white-space:nowrap;}
+.phase{margin-top:34px;}
+.phase-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;padding-bottom:6px;border-bottom:2px solid var(--color-primary);margin-bottom:16px;}
+.phase-tag{display:inline-flex;align-items:center;padding:5px 12px;border-radius:var(--radius-pill);background:var(--color-primary);color:#fff;font-size:var(--fs-xs);font-weight:700;letter-spacing:.04em;text-transform:uppercase;}
+.phase-date{font-size:var(--fs-xs);font-weight:700;color:var(--color-ink-faint);}
+.phase-sub{flex-basis:100%;color:var(--color-ink-faint);font-size:var(--fs-sm);margin:5px 0 0;}
+.build .phase-head{border-bottom-color:#f0c98a;} .build .phase-tag{background:#9a5b00;}
+.op .phase-head{border-bottom-color:var(--color-ink-faint);} .op .phase-tag{background:var(--color-ink-muted);}
+.dl{list-style:none;margin:0;padding:0;}
+.dl li{padding:9px 14px;border:1px solid var(--color-border);border-radius:var(--radius-card);margin-bottom:7px;font-size:var(--fs-sm);line-height:var(--lh-body);background:var(--color-surface);} .dl li b{color:var(--color-ink);}
+.sub-h{font-size:var(--fs-sm);font-weight:700;color:var(--color-ink);margin:16px 0 4px;} .sub-h .small{font-weight:500;color:var(--color-ink-faint);}
+.grp{font-size:var(--fs-xs);font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--color-primary-dark);margin:12px 0 4px;}
+.list{list-style:none;margin:0 0 8px;padding:0;}
+.list li{padding:8px 14px;border:1px solid var(--color-border);border-radius:var(--radius-card);margin-bottom:6px;font-size:var(--fs-sm);background:var(--color-surface);} .list li b{color:var(--color-ink);}
+.simple{background:var(--color-surface-muted);border:1px solid var(--color-border);border-radius:var(--radius-card);padding:12px 18px;margin-bottom:9px;font-size:var(--fs-sm);line-height:var(--lh-body);} .simple b{color:var(--color-ink);}
+.qa{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-card);padding:12px 16px;margin-bottom:8px;font-size:var(--fs-sm);line-height:var(--lh-body);} .qa b{color:var(--color-ink);} .qa em{color:var(--color-primary-dark);font-style:normal;font-weight:600;}
+.loop{background:var(--color-surface);border:1px solid var(--color-primary);border-radius:var(--radius-card);padding:14px 20px;margin:12px 0;}
+.loop ol{margin:6px 0 0;padding-left:20px;font-size:var(--fs-sm);line-height:var(--lh-body);} .loop ol li{margin-bottom:3px;} .loop ol li b{color:var(--color-ink);}
+.next{background:var(--color-ink);color:#fff;border-radius:var(--radius-card);padding:14px 18px;margin-top:24px;font-size:var(--fs-sm);} .next b{color:#fff;}
+.foot{max-width:900px;margin:0 auto;padding:24px;border-top:1px solid var(--color-border);color:var(--color-ink-faint);font-size:var(--fs-xs);}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="bar-in">
+    <div class="brandmark">
+      <svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg" aria-label="Helloprint"><g transform="translate(0,260) scale(0.1,-0.1)" fill="#ffffff"><path d="M757 2584 c-1 -1 -28 -5 -60 -8 -114 -14 -266 -73 -376 -148 -174 -120 -331 -374 -269 -436 34 -34 90 -10 295 130 287 194 465 219 540 75 42 -82 32 -214 -34 -427 -35 -113 -142 -413 -151 -422 -4 -4 -86 -10 -182 -13 -288 -10 -343 -18 -381 -56 -28 -28 -24 -59 20 -125 84 -127 111 -139 303 -131 l127 4 -10 -26 c-6 -14 -44 -116 -86 -226 -41 -110 -95 -249 -118 -310 -59 -149 -74 -254 -50 -349 18 -69 53 -101 110 -100 91 3 185 87 254 229 40 81 57 128 208 565 46 135 87 248 91 252 6 6 37 10 182 24 30 3 64 7 75 9 11 1 56 6 100 10 44 4 91 8 104 10 13 3 61 7 105 11 45 3 84 8 89 11 9 6 10 8 -13 -72 -29 -99 -58 -225 -79 -333 -65 -338 40 -594 264 -645 61 -14 79 -14 175 -2 149 20 307 98 487 242 l93 74 -24 47 c-27 54 -51 122 -55 153 0 6 -25 -11 -53 -37 -72 -64 -187 -138 -256 -164 -44 -17 -71 -21 -119 -17 -152 12 -187 115 -137 402 13 76 93 377 102 387 4 4 34 9 67 12 33 3 71 8 85 11 14 2 57 7 95 10 185 15 234 45 215 131 -10 45 -40 73 -79 75 -37 2 -207 -2 -263 -6 -27 -2 -48 0 -48 5 0 19 139 430 203 601 74 198 84 235 81 299 -5 95 -48 140 -137 140 -133 0 -197 -85 -312 -420 -32 -91 -61 -174 -66 -185 -4 -11 -40 -119 -79 -240 l-70 -220 -48 -1 c-44 -1 -193 -7 -469 -20 l-122 -6 8 29 c59 199 74 254 95 343 34 142 56 269 63 365 19 282 -147 469 -435 488 -29 2 -53 3 -55 1z"></path></g></svg>
+      <span class="lbl">SEO &amp; Content Agentic Team</span>
+    </div>
+    <span class="ver">Content Rebuild Engine</span>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <h1>Content Rebuild Engine — Plan</h1>
+    <div class="metarow">
+      <span class="pill pill-ink">draft</span>
+      <span class="pill pill-ink">owner: Niels Molenaar</span>
+      <span class="pill pill-ink">2026-06-05</span>
+    </div>
+    <p class="lead">Rebuild all our content — fresh, optimised, nothing copied — in the new Contentful space, built and run by the SEO &amp; Content agent team, <b>country by country</b>.</p>
+  </div>
+
+  <h3 class="sec">The goal</h3>
+  <p class="lead">Our organic traffic fell hard after last year's migration. This plan rebuilds every page we should have, to a high quality bar, in the new setup. Two promises hold throughout: <b>every page is genuinely good</b>, and <b>nothing that should exist is missed</b>. We're done when every country is live with 100% of its pages, all checked.</p>
+
+  <h3 class="sec">Learnings from the current Content Engine</h3>
+  <p class="lead">We've built a version of this before — the <a href="Content-Engine-Business-Overview.md" style="color:var(--color-primary);font-weight:700;">current Content Engine</a>. It writes and translates product-page copy, makes the images and icons, and publishes to Contentful. It pulled work out of spreadsheets and Trello and scaled product onboarding. It earned its place, and the new system builds on it.</p>
+  <p style="font-size:var(--fs-sm);font-weight:700;color:var(--color-ink);margin:10px 0 4px;">What it did well — and we keep</p>
+  <ul class="protect">
+    <li><b>Icon and product-image generation</b> — good quality, at scale. Our strongest asset.</li>
+    <li><b>A live connection to the product catalogue</b> — the plumbing works.</li>
+    <li><b>The custom-instruction field</b> — a good way to push iterations on the content.</li>
+  </ul>
+  <p style="font-size:var(--fs-sm);font-weight:700;color:var(--color-ink);margin:14px 0 4px;">What we'll do better</p>
+  <ul class="list">
+    <li><b>It runs itself.</b> The old one was a screen someone had to click through. The new one does the work; people steer and approve.</li>
+    <li><b>Truly local per country.</b> The old one barely changed per market — not the intent, the keywords, or the writing. The new one is native in all three.</li>
+    <li><b>It writes from the product data, not just connects to it.</b> The old one linked the catalogue to Contentful but didn't use what was in it. With the richer new catalogue, that data is the foundation of every page.</li>
+    <li><b>It remembers and improves.</b> Custom instructions let us iterate, but nothing was remembered — so quality never built up. The new one learns as it goes.</li>
+    <li><b>It creates, not just tweaks.</b> The old one could only improve an existing page from a fixed template. The new one builds a page from scratch — creative and on-goal, to our standards.</li>
+    <li><b>It checks its own quality.</b> The old one leaned on people to catch weak copy. The new one checks every page — unique, relevant, on-brand — before it goes live.</li>
+    <li><b>It covers everything.</b> The old one did product pages. The new one does every page type, and makes sure no page that should exist is missing.</li>
+    <li><b>Small changes are easy too.</b> The old one only paid off for big rebuilds — for small edits it was quicker to open Contentful. The new one handles small tweaks just as easily. <b>The goal: never edit Contentful by hand again.</b></li>
+    <li><b>It analyses and recommends.</b> The old one didn't analyse anything. The new one spots problems and opportunities itself and proposes the fix — which is what makes it fully agentic and always improving.</li>
+  </ul>
+  <div class="callout">In one line: the old engine was a manual tool that filled product pages from templates; the new one runs itself, writes truly local content from scratch, learns over time, and finds and fixes opportunities on its own — so we never touch Contentful by hand again.</div>
+
+  <h3 class="sec">How it works</h3>
+  <p class="lead" style="font-size:var(--fs-body);"><b>Niels defines everything first (Plans + Fundament). Michael (our CTO) and engineering build it. The agents then run it.</b></p>
+  <p class="lead" style="font-size:var(--fs-sm);">The team already exists — the only genuinely new piece is the <b>Content Generation Overview</b> (a simple to-do + status list, a Google Sheet). We roll out <b>country by country</b> — generate, check, take it live, learn, improve, then the next. <b>Ireland is the first.</b> The list of what each country should have is worked out once; we build one country at a time off it, making <b>only the pages that country should have</b>.</p>
+
+  <h3 class="sec">What we protect</h3>
+  <ul class="protect">
+    <li><b>Quality first</b> — the checks decide what goes live.</li>
+    <li><b>URLs stay the same</b> — change one only when we must, always with a redirect.</li>
+    <li><b>Every page a country should have, exists</b> — nothing silently dropped.</li>
+    <li><b>No broken links</b> — every old address still works (kept or redirected).</li>
+  </ul>
+
+  <h3 class="sec">Who does what</h3>
+  <table>
+    <tr><th>Role</th><th></th></tr>
+    <tr><td><b>Define — Niels</b></td><td>All planning and definitions (Plans + Fundament). With <b>Cornel</b> for how we express the brand, an <b>external local-language specialist</b> to check each country's rules, and <b>Frederico</b> to help build the overview.</td></tr>
+    <tr><td><b>Build — Michael (CTO) / engineering</b></td><td>The new Contentful space + website, the page blocks in code, the tools, and the agents (the Fundament + Build phases).</td></tr>
+    <tr><td><b>Run — the agents</b></td><td>Writing, checking, going live, and ongoing improvement.</td></tr>
+  </table>
+
+  <h3 class="sec">Timeline</h3>
+  <table>
+    <tr><th>Phase</th><th>Target</th><th>What's done</th></tr>
+    <tr><td class="ph">1 · Plans</td><td class="dt">9 Jun 2026</td><td>content-type specs · the Overview design · the agent plan (team + QA) · Helpcenter/Blog/Wiki structure plan</td></tr>
+    <tr><td class="ph">2 · Fundament</td><td class="dt">12 Jun 2026</td><td>agent-system foundation started · tone of voice per country done · agents' deeper context · H/B/W content plan · Company pages (manual) · Contentful contract closed</td></tr>
+    <tr><td class="ph">3 · Build</td><td class="dt">22 Jun 2026</td><td>full agent system · Contentful structure · QA system · current-content pipeline — built</td></tr>
+    <tr><td class="ph">4 · Generation</td><td class="dt">6 Jul 2026</td><td>per-block content for Ireland tested, generated and improved</td></tr>
+    <tr><td class="ph">5 · Full QA &amp; Testing</td><td class="dt">8 Jul 2026</td><td>Ireland fully optimised — content complete, flows work, monitoring works, no loose ends → <b>first country live</b></td></tr>
+    <tr><td class="ph"><em>After</em></td><td class="dt">—</td><td>roll out the remaining countries the same way, then continuous improvement</td></tr>
+  </table>
+  <div class="note">The dates depend on two things outside this plan landing on time: <strong>the content spec</strong> and <strong>the new Contentful + website (Michael)</strong>.</div>
+
+  <!-- PHASE 1 PLANS -->
+  <section class="phase">
+    <div class="phase-head"><span class="phase-tag">Phase 1 · Plans</span><h2>Plans</h2><span class="phase-date">Niels · by 9 Jun</span><p class="phase-sub">Everything defined on paper before anything is built.</p></div>
+    <ul class="dl">
+      <li><b>Content-type specs</b> — our content model turned into a spec the system can check, starting with category pages.</li>
+      <li><b>Overview design</b> — the layout of the Content Generation Overview (the to-do + status list; it doesn't hold the content and doesn't coordinate the agents — it's the shared list of what's to do and what's done, including pages that don't exist yet).</li>
+      <li><b>The agent plan</b> — the full agent team, how they work together, and the QA system (all below).</li>
+      <li><b>Helpcenter / Blog / Wiki structure plan</b> — the page architecture: which pages exist, their URLs, how they link.</li>
+    </ul>
+
+    <div class="sub-h">The agent team <span class="small">— defined here, built in Build</span></div>
+    <div class="grp">Make the content</div>
+    <ul class="list">
+      <li><b>SEO Lead</b> — runs the team, sets priorities, signs off go-live.</li>
+      <li><b>Content Writer</b> — writes the content.</li>
+      <li><b>Locale Specialist</b> — makes content native to the market.</li>
+      <li><b>Editor-in-Chief</b> — owns the quality check.</li>
+      <li><b>Technical SEO Engineer</b> — owns the overview, the technical checks, and publishing.</li>
+      <li><b>Category Expert</b> — gives the writer the correct product facts.</li>
+      <li><b>Compliance &amp; Claims</b> — checks legal claims before anything is published.</li>
+    </ul>
+    <div class="grp">Research, data, coverage &amp; monitoring</div>
+    <ul class="list">
+      <li><b>SEO Researcher</b> — the keywords for each country.</li>
+      <li><b>The Analyser</b> — our own data (visits, orders, profit) to set page priority.</li>
+      <li><b>SEO Health Specialist</b> — checks every page a country should have is there, plus technical health.</li>
+      <li><b>SEO Performance Watcher</b> — watches traffic and rankings after launch.</li>
+    </ul>
+    <div class="grp">Coordination</div>
+    <ul class="list">
+      <li><b>Localization Lead</b> — coordinates across countries.</li>
+      <li><b>Product Owner</b> — turns needs into clear work and tracks delivery.</li>
+      <li><b>SEO Finance Partner</b> — watches cost vs value.</li>
+    </ul>
+    <p class="lead" style="font-size:var(--fs-sm);">We define and build the whole team at once; each agent starts with a solid baseline and <b>gets deeper context over time</b> to work even better.</p>
+
+    <div class="sub-h">How the agents work together</div>
+    <div class="simple">The <b>agent system</b> runs the order (brief → write → make native → check → publish) and passes work between agents through the Overview — the Overview is the to-do + status list, the agent system does the coordinating.</div>
+
+    <div class="sub-h">The QA system — three checks <span class="small">— defined here, built in Build</span></div>
+    <div class="qa"><b>Content check</b> — <em>is the page good and on-brand?</em> Right structure, right keywords, correct facts, well written, original (not copied), and no two pages competing for the same keyword.</div>
+    <div class="qa"><b>Coverage check</b> — <em>does every page a country should have actually exist?</em> Compares the should-have list to what's been made, and flags anything missing.</div>
+    <div class="qa"><b>Technical check</b> — <em>is the live site healthy?</em> No broken links, properly indexed, fast — plus watching traffic and rankings. Reuses our existing traffic-loss monitor.</div>
+  </section>
+
+  <!-- PHASE 2 FUNDAMENT -->
+  <section class="phase">
+    <div class="phase-head"><span class="phase-tag">Phase 2 · Fundament</span><h2>Fundament</h2><span class="phase-date">by 12 Jun</span><p class="phase-sub">The groundwork in place.</p></div>
+    <ul class="dl">
+      <li><b>Agent-system foundation</b> — Michael starts building the base of the agent system.</li>
+      <li><b>Tone of voice per country — done</b> — how we write, plus each market's vocabulary, competitors and local context; UK + Ireland first, then a template (Niels, with Cornel + an external local-language specialist).</li>
+      <li><b>Agents' deeper context</b> — the agents' grounding: the product-catalogue data, market knowledge, and tool access (the HelloPrint SEO MCP).</li>
+      <li><b>Helpcenter / Blog / Wiki content plan</b> — the editorial plan for what content fills the H/B/W structure.</li>
+      <li><b>Company pages — done</b> — built manually, outside the engine.</li>
+      <li><b>Contentful contract — closed.</b></li>
+    </ul>
+  </section>
+
+  <!-- PHASE 3 BUILD -->
+  <section class="phase build">
+    <div class="phase-head"><span class="phase-tag">Phase 3 · Build</span><h2>Build</h2><span class="phase-date">Michael · by 22 Jun</span><p class="phase-sub">The full technical build.</p></div>
+    <ul class="dl">
+      <li><b>Full agent system</b> — every agent built.</li>
+      <li><b>Contentful structure</b> — the page blocks in code, set up so every country has its own content with <b>no fall-back</b>.</li>
+      <li><b>QA system</b> — the three checks, working.</li>
+      <li><b>Current-content pipeline</b> — pull our current content (by web address, with an old→new map) so it can be a starting point.</li>
+    </ul>
+  </section>
+
+  <!-- PHASE 4 GENERATION -->
+  <section class="phase op">
+    <div class="phase-head"><span class="phase-tag">Phase 4 · Generation</span><h2>Generation</h2><span class="phase-date">by 6 Jul</span><p class="phase-sub">Per-block content for Ireland tested, generated and improved.</p></div>
+    <div class="loop">
+      <b>For each block</b>, in order (category pages → products → themed pages → help centre → blog → wiki):
+      <ol>
+        <li><b>Get</b> the brief from the Overview (keywords, page goal, country rules, old content to start from).</li>
+        <li><b>Write</b> it fresh (Content Writer + Locale Specialist).</li>
+        <li><b>Check</b> it; if it fails, back to step 2.</li>
+        <li><b>Publish</b> the passing block to the new space.</li>
+        <li><b>Tick</b> it off the list.</li>
+      </ol>
+    </div>
+    <div class="simple">It improves as it runs — every failed check tightens the prompts and the rules, so fewer fail over time.</div>
+  </section>
+
+  <!-- PHASE 5 FULL QA -->
+  <section class="phase op">
+    <div class="phase-head"><span class="phase-tag">Phase 5 · Full QA &amp; Testing</span><h2>Full QA &amp; Testing</h2><span class="phase-date">by 8 Jul</span></div>
+    <div class="callout"><b>Ireland is the first country fully rolled out.</b> Full content optimised, all flows work, the monitoring system works, no loose ends — 100% of Ireland's pages, all checks green, every link resolves, monitoring live, signed off → Ireland goes live.</div>
+  </section>
+
+  <!-- AFTER -->
+  <section class="phase op">
+    <div class="phase-head"><span class="phase-tag" style="background:var(--color-ink);">After</span><h2>After 8 July</h2></div>
+    <div class="simple">Roll out the remaining countries the same way, one at a time (US last — different products and pages), then <b>keep improving</b>: the agents spot issues and opportunities themselves and optimise continuously.</div>
+  </section>
+
+  <!-- TOOLS -->
+  <section class="phase">
+    <div class="phase-head"><span class="phase-tag" style="background:var(--color-ink);">Tools</span><h2>Tools the agents use</h2><p class="phase-sub">Every agent works from one shared tool set — the HelloPrint SEO MCP — and then gets a few extra tools where they add value.</p></div>
+
+    <div class="sub-h">Base tools — the HelloPrint SEO MCP <span class="small">(shared by every agent)</span></div>
+    <div class="simple">One shared SEO toolkit, exposed as the <b>HelloPrint SEO MCP</b>:
+      <ul style="margin:8px 0 0;padding-left:18px;">
+        <li><b>Ahrefs</b> — external + internal estimated search &amp; GEO data, for analysis, performance and technical audits.</li>
+        <li><b>Google Search Console</b> — our real organic search data: clicks, impressions, rankings, technical context.</li>
+        <li><b>GSC Wizard</b> — a helper that adds expert context to GSC analysis.</li>
+        <li><b>Specifications Website</b> — expert context on website specifications.</li>
+        <li><b>Screaming Frog</b> — website-health crawler.</li>
+        <li><b>Contentful</b> — the content management system.</li>
+        <li><b>Datadog</b> — pulls Cloudflare log data.</li>
+        <li><b>Google Analytics</b> — real conversion data and sessions per channel.</li>
+        <li><b>Lighthouse</b> — technical performance data.</li>
+        <li><b>Linear</b> — view, edit and create development tickets.</li>
+        <li><b>Cube</b> — internal performance and order data (and the hub other tools connect through).</li>
+      </ul>
+      <p style="margin:10px 0 0;">Alongside the MCP, every agent also reads the <b>Content Generation Overview</b> and the <b>foundations</b> (the spec, tone of voice per country, country rules).</p>
+    </div>
+
+    <div class="sub-h">Extra tools per agent <span class="small">(on top of the base — to confirm together)</span></div>
+    <table>
+      <tr><th>Agent</th><th>Extra tools (to confirm)</th></tr>
+      <tr><td class="ag">Editor-in-Chief</td><td>A copy / originality (similarity) check</td></tr>
+      <tr><td class="ag">Category Expert</td><td>The full product catalogue / PCM</td></tr>
+      <tr><td class="ag">Compliance &amp; Claims</td><td>Claim-verification sources (eco / legal)</td></tr>
+      <tr><td class="ag">SEO Finance Partner</td><td>Agent token / cost-usage data</td></tr>
+      <tr><td class="ag"><em>All other agents</em></td><td>— covered by the base</td></tr>
+    </table>
+  </section>
+
+  <div class="next"><b>Next step:</b> start <b>Phase 1 — Plans</b> by 9 June — the content-type specs, the Overview design, the agent plan, and the Helpcenter/Blog/Wiki structure plan.</div>
+
+</div>
+
+<div class="foot">Helloprint · SEO &amp; Content Agentic Team · Content Rebuild Engine — Plan · 2026-06-05 · define: Niels · build: Michael (CTO) · source of truth: Content-Rebuild-Engine-Plan-v1.0.md</div>
+
+</body>
+</html>

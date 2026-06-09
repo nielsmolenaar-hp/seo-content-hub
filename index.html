@@ -58,11 +58,16 @@ h1{font-size:var(--fs-h1); line-height:var(--lh-h1); font-weight:700; letter-spa
 .kicker{font-size:var(--fs-xs); line-height:1; font-weight:600; text-transform:uppercase; letter-spacing:.07em; color:var(--color-primary-dark); margin:0 0 6px;}
 .doc-title{font-size:var(--fs-h3); line-height:var(--lh-h3); font-weight:700; margin:0 0 10px; color:var(--color-ink);}
 .doc-desc{font-size:var(--fs-sm); line-height:21px; color:var(--color-ink-muted); margin:0 0 18px;}
-.card-actions{margin-top:auto; display:flex; align-items:center; gap:12px;}
+
+.card-actions{margin-top:auto; display:flex; align-items:center; gap:16px; flex-wrap:wrap;}
 .btn-primary{display:inline-flex; align-items:center; gap:8px; background:var(--color-primary); color:#fff; font-weight:600; font-size:var(--fs-sm); padding:10px 20px; border-radius:var(--radius-pill); transition:background 200ms;}
 .btn-primary:hover{background:var(--color-primary-dark); color:#fff;}
 .btn-primary svg{width:16px; height:16px;}
-.where{font-size:var(--fs-xs); line-height:var(--lh-xs); color:var(--color-ink-faint);}
+.doc-links{display:flex; align-items:center; gap:14px; flex-wrap:wrap;}
+.link-sub{display:inline-flex; align-items:center; gap:5px; font-size:var(--fs-sm); font-weight:600; color:var(--color-primary);}
+.link-sub:hover{color:var(--color-primary-dark);}
+.link-sub svg{width:13px; height:13px;}
+.fmt-note{font-size:var(--fs-xs); line-height:var(--lh-xs); color:var(--color-ink-faint);}
 
 .note{max-width:var(--container); margin:18px auto 0; padding:0 24px;}
 .note-inner{display:flex; gap:12px; align-items:flex-start; background:#fff; border:1px solid var(--color-border); border-left:3px solid var(--color-primary); border-radius:12px; padding:16px 18px;}
@@ -92,10 +97,10 @@ footer{max-width:var(--container); margin:0 auto; padding:36px 24px 56px;}
 <section class="hero">
   <span class="eyebrow"><span class="dot"></span> SEO &amp; Content Frontend</span>
   <h1>SEO &amp; Content — Document Hub</h1>
-  <p class="lede">One place for the four reference documents — the full page-content spec, the agent team roster, the content-engine rebuild plan and the content-hierarchy plan. Open any of them below.</p>
+  <p class="lede">One place for the reference documents — the full page-content spec, the agent team roster, the content-engine rebuild plan, the content-hierarchy plan and the block gallery. Each is available as a rendered page and as Markdown source.</p>
   <div class="meta-line">
-    <span>4 documents</span><span class="sep">·</span>
-    <span>3 published here · 1 in Google Docs</span><span class="sep">·</span>
+    <span>5 documents</span><span class="sep">·</span>
+    <span>HTML page + Markdown source</span><span class="sep">·</span>
     <span>Open to anyone with the link</span>
   </div>
 </section>
@@ -112,13 +117,18 @@ footer{max-width:var(--container); margin:0 auto; padding:36px 24px 56px;}
     </div>
     <p class="kicker">Full specs document</p>
     <h2 class="doc-title">Page Content Model — Complete</h2>
-    <p class="doc-desc">The canonical, consolidated spec for PDP, PLP and FLP — the page-type map, content models and both block-variation catalogs in one document. The single source of truth.</p>
+    <p class="doc-desc">The canonical, consolidated spec for PDP, PLP and FLP — the page-type map, content models and both block-variation catalogs in one document. The single source of truth (the Markdown is the source; the HTML is its render).</p>
     <div class="card-actions">
       <a class="btn-primary" href="./HelloPrint-Page-Content-Model-COMPLETE.html" target="_blank" rel="noopener">
-        Open document
+        Open page
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
-      <span class="where">Page Content Model</span>
+      <div class="doc-links">
+        <a class="link-sub" href="https://github.com/nielsmolenaar-hp/seo-content-hub/blob/main/HelloPrint-Page-Content-Model-COMPLETE.md" target="_blank" rel="noopener">
+          Markdown
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
     </div>
   </article>
 
@@ -135,10 +145,15 @@ footer{max-width:var(--container); margin:0 auto; padding:36px 24px 56px;}
     <p class="doc-desc">The mission, operating model and full agent roster for the SEO &amp; content team — built around organic search as Helloprint's primary growth engine.</p>
     <div class="card-actions">
       <a class="btn-primary" href="./Team-Roster-v2.9.1.html" target="_blank" rel="noopener">
-        Open document
+        Open page
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
-      <span class="where">Agent team</span>
+      <div class="doc-links">
+        <a class="link-sub" href="https://github.com/nielsmolenaar-hp/seo-content-hub/blob/main/Team-Roster-v2.9.1.md" target="_blank" rel="noopener">
+          Markdown
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
     </div>
   </article>
 
@@ -148,17 +163,26 @@ footer{max-width:var(--container); margin:0 auto; padding:36px 24px 56px;}
       <div class="icon-badge">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
       </div>
-      <span class="pill">v1.0 · Google Doc</span>
+      <span class="pill">v1.0</span>
     </div>
     <p class="kicker">Content engine rebuild document</p>
-    <h2 class="doc-title">Content Rebuild Engine — Action Plan</h2>
-    <p class="doc-desc">The plan to rebuild Helloprint's content engine: a global Core plus local docs on a shared 8-part backbone, tone-dials for local voice, and FSC / sustainability rules. Lives in Drive for brand-director sign-off.</p>
+    <h2 class="doc-title">Content Rebuild Engine — Plan</h2>
+    <p class="doc-desc">The plan to rebuild Helloprint's content engine: a global Core plus local docs on a shared 8-part backbone, tone-dials for local voice, and FSC / sustainability rules.</p>
     <div class="card-actions">
-      <a class="btn-primary" href="https://docs.google.com/document/d/1oXuhkUqVaRsPOUHvWkx96hzoiGSdCpusYnipDrVRdKQ/edit" target="_blank" rel="noopener">
-        Open in Google Docs
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      <a class="btn-primary" href="./Content-Rebuild-Engine-Plan-v1.0.html" target="_blank" rel="noopener">
+        Open page
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
-      <span class="where">Google Drive</span>
+      <div class="doc-links">
+        <a class="link-sub" href="https://github.com/nielsmolenaar-hp/seo-content-hub/blob/main/Content-Rebuild-Engine-Plan-v1.0.md" target="_blank" rel="noopener">
+          Markdown
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+        <a class="link-sub" href="https://docs.google.com/document/d/1oXuhkUqVaRsPOUHvWkx96hzoiGSdCpusYnipDrVRdKQ/edit" target="_blank" rel="noopener">
+          Google Doc
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
     </div>
   </article>
 
@@ -175,10 +199,35 @@ footer{max-width:var(--container); margin:0 auto; padding:36px 24px 56px;}
     <p class="doc-desc">How helpcenter, blog and SEO content fit together — the site-hierarchy model and a 13-bucket content model, with the SEO integration plan for each layer.</p>
     <div class="card-actions">
       <a class="btn-primary" href="./helpcenter-blog-seo-integration-plan.html" target="_blank" rel="noopener">
-        Open document
+        Open page
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
-      <span class="where">Content hierarchy</span>
+      <div class="doc-links">
+        <a class="link-sub" href="https://github.com/nielsmolenaar-hp/seo-content-hub/blob/main/helpcenter-blog-seo-integration-plan.md" target="_blank" rel="noopener">
+          Markdown
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+    </div>
+  </article>
+
+  <!-- 5. Block Design Gallery -->
+  <article class="doc-card">
+    <div class="card-top">
+      <div class="icon-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      </div>
+      <span class="pill">Companion</span>
+    </div>
+    <p class="kicker">Block design gallery</p>
+    <h2 class="doc-title">Block &amp; Variation Gallery</h2>
+    <p class="doc-desc">The visual companion to the Page Content Model — every block and its variations rendered as a browsable gallery. Generated from the model, so it tracks the spec.</p>
+    <div class="card-actions">
+      <a class="btn-primary" href="./HelloPrint-Block-Design-Gallery.html" target="_blank" rel="noopener">
+        Open gallery
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <span class="fmt-note">Visual gallery · HTML only</span>
     </div>
   </article>
 
@@ -187,7 +236,7 @@ footer{max-width:var(--container); margin:0 auto; padding:36px 24px 56px;}
 <div class="note">
   <div class="note-inner">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-    <p>This hub and its three documents are published as a static site, so anyone with the link can open them in the browser — no login. They carry a <strong>noindex</strong> tag, so they won't show up in search results. The Content Rebuild plan opens in Google Docs (shared separately).</p>
+    <p><strong>Open page</strong> opens the rendered document on this site; <strong>Markdown</strong> opens the source file rendered on GitHub. Everything is open to anyone with the link and carries a <strong>noindex</strong> tag, so it won't appear in search results.</p>
   </div>
 </div>
 

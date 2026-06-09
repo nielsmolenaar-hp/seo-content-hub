@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta name="robots" content="noindex,nofollow"><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>HelloPrint — Block &amp; Variation Gallery</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>:root{--color-primary:#008539;--color-primary-dark:#006B2D;--color-primary-light:#00A651;--color-ink:#191919;--color-ink-muted:#333;--color-ink-faint:#555;--color-surface:#fff;--color-surface-muted:#f8f8f8;--color-border:#e5e5e5;--color-trustpilot:#00b67a;--accent:#f59e0b;--eco:#7cb342;--design:#00897b;--radius:12px;--radius-lg:16px;--pill:9999px;--font:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+body{font-family:var(--font);color:var(--color-ink);margin:0;background:#fafbfa;font-size:15px;line-height:1.5}
+.blk{background:#fff;border:1px solid var(--color-border);border-radius:var(--radius-lg);margin:22px 0;overflow:hidden}
+.blkh{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 16px;background:var(--color-surface-muted);border-bottom:1px solid var(--color-border)}
+.blkname{font-weight:700;font-size:16px}.blkid{font-family:ui-monospace,Menlo,monospace;font-size:11px;background:#eef2ef;border:1px solid var(--color-border);border-radius:6px;padding:1px 6px;color:var(--color-ink-faint)}
+.blkbody{padding:16px}
+.vars{display:grid;gap:16px}.var{border:1px dashed var(--color-border);border-radius:var(--radius);padding:12px}
+.vcap{font-size:12px;font-weight:600;color:var(--color-primary-dark);text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px}
+.tag{font-size:10.5px;font-weight:700;border-radius:var(--pill);padding:2px 8px;white-space:nowrap}
+.tag-v1{background:#e8f5e9;color:#006B2D}.tag-v2{background:#fff3e0;color:#b45309}.tag-keep{background:#eef2f7;color:#445}.tag-parked{background:#f3f3f3;color:#777}
+.ph{background:#f0f0f0;border:1px solid #e8e8e8;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#aaa;font-size:11px;width:100%}
+.ph.sq{aspect-ratio:1/1}.ph.r43{aspect-ratio:4/3}.ph.p34{aspect-ratio:3/4}.ph.w169{aspect-ratio:16/9}
+.grid{display:grid;gap:14px}.grid.c4{grid-template-columns:repeat(4,1fr)}.grid.c3{grid-template-columns:repeat(3,1fr)}.grid.c2{grid-template-columns:repeat(2,1fr)}
+.pcard{border:1px solid var(--color-border);border-radius:var(--radius);overflow:hidden;position:relative;background:#fff}
+.pcard .media{position:relative}.pcard .body{padding:10px}.pname{font-size:13px;font-weight:600}.pattr{font-size:11px;color:var(--color-ink-faint);margin:3px 0}.pprice{font-size:13px}.pprice b{font-size:15px}.pdeliv{font-size:11px;color:var(--color-ink-faint);margin-top:4px}
+.labels{position:absolute;top:8px;left:8px;display:flex;flex-direction:column;gap:4px;z-index:2}
+.lab{font-size:10px;font-weight:600;border-radius:var(--pill);padding:2px 8px;color:#fff}
+.lab.default{background:#fff;color:#191919;border:1px solid var(--color-border)}.lab.primary{background:var(--color-primary)}.lab.design{background:var(--design)}.lab.eco{background:var(--eco)}
+.swrow{position:absolute;left:8px;bottom:8px;display:flex;gap:6px;z-index:2}.sw{width:16px;height:16px;border-radius:var(--pill);border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.1)}
+.btn{display:inline-flex;align-items:center;gap:6px;background:var(--color-primary);color:#fff;border:none;border-radius:var(--pill);padding:8px 16px;font-weight:600;font-size:13px;cursor:default}
+.btn.alt{background:#fff;color:var(--color-ink);border:1px solid var(--color-border)}.btn.design{background:var(--design)}
+.usp{display:flex;gap:22px;flex-wrap:wrap;background:var(--color-surface-muted);border-radius:var(--radius);padding:10px 16px;font-size:13px;align-items:center}
+.usp .u{display:flex;gap:6px;align-items:center}.tick{color:var(--color-primary);font-weight:800}
+.crumb{font-size:12px;color:var(--color-ink-faint)}.crumb a{color:var(--color-ink-faint)}
+.h1m{font-size:28px;font-weight:700;letter-spacing:-.01em;margin:6px 0}.lede{color:var(--color-ink-muted);font-size:14px;max-width:60ch}.showmore{color:var(--color-primary);font-size:13px;font-weight:600}
+.cm{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center}.cm.below{grid-template-columns:1fr}
+.cap{font-size:11px;color:var(--color-ink-faint);margin-top:5px}
+.promo{border-radius:var(--radius);overflow:hidden;color:#fff;background:var(--color-primary);padding:16px;display:flex;flex-direction:column;justify-content:space-between;min-height:160px}
+.promo.disc{background:#fff;color:var(--color-ink);border:1px solid var(--color-border)}.strike{text-decoration:line-through;color:var(--color-ink-faint)}
+.faqi{border-bottom:1px solid var(--color-border);padding:10px 0;font-size:14px}.faqi .q{font-weight:600;display:flex;justify-content:space-between}
+.rev{border:1px solid var(--color-border);border-radius:var(--radius);padding:12px;font-size:13px}.stars{color:var(--color-trustpilot);font-weight:800}
+.pcn{display:flex;align-items:center;gap:10px;border:1px solid var(--color-border);border-radius:var(--radius);padding:10px}
+.brandstrip{display:flex;gap:24px;flex-wrap:wrap;align-items:center;filter:grayscale(1);opacity:.7}.brandstrip .ph{width:90px;height:34px}
+.jump{display:flex;gap:8px;flex-wrap:wrap}.jump a{background:var(--color-surface-muted);border:1px solid var(--color-border);border-radius:var(--pill);padding:4px 12px;font-size:12px}
+.rtt{width:100%;border-collapse:collapse;font-size:12.5px}.rtt th,.rtt td{border:1px solid var(--color-border);padding:6px 9px;text-align:left}.rtt th{background:var(--color-surface-muted)}
+.zcols{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;font-size:12.5px}.zcols h5{margin:0 0 6px;font-size:13px}.zcols ul{margin:0;padding-left:14px;color:var(--color-primary)}
+.byline{display:flex;gap:12px;align-items:center;border:1px solid var(--color-border);border-radius:var(--radius);padding:12px}.byline .ph{width:56px;height:56px;border-radius:var(--pill);flex:none}
+.facet{display:grid;grid-template-columns:220px 1fr;gap:16px}.facetpanel{border:1px solid var(--color-border);border-radius:var(--radius);padding:12px;font-size:13px}.facetpanel .fv{display:flex;justify-content:space-between;padding:3px 0}.dim{opacity:.5}
+.note{font-size:12px;color:var(--color-ink-faint);margin-top:8px}
+@media(max-width:760px){.grid.c4{grid-template-columns:repeat(2,1fr)}.cm{grid-template-columns:1fr}.zcols{grid-template-columns:repeat(2,1fr)}.facet{grid-template-columns:1fr}}
+*{box-sizing:border-box}.topbar{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--color-border);padding:12px 22px;display:flex;align-items:center;gap:14px}
+.topbar .mark{width:26px;height:26px;border-radius:7px;background:var(--color-primary);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:15px}
+.topbar h1{font-size:16px;margin:0;font-weight:700}.topbar .sub{font-size:12px;color:var(--color-ink-faint)}
+.legend{margin-left:auto;display:flex;gap:14px;font-size:11.5px;color:var(--color-ink-faint);flex-wrap:wrap}.legend .li{display:flex;align-items:center;gap:5px}
+.dot{width:9px;height:9px;border-radius:50%;display:inline-block}.dot.tag-v1{background:#008539}.dot.tag-v2{background:#f59e0b}.dot.tag-keep{background:#7a8aa0}.dot.tag-parked{background:#bbb}
+.layout{display:grid;grid-template-columns:262px 1fr;align-items:start}
+.side{position:sticky;top:53px;align-self:start;height:calc(100vh - 53px);overflow:auto;border-right:1px solid var(--color-border);padding:14px 10px 40px;background:#fff}
+.side a{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--color-ink-muted);font-size:12.5px;padding:5px 8px;border-radius:8px}
+.side a:hover{background:var(--color-surface-muted);color:var(--color-ink)}
+.navgrp{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--color-primary-dark);margin:16px 8px 6px}.navgrp:first-child{margin-top:4px}
+.main{padding:22px 30px 80px;max-width:1080px}
+.intro{background:var(--color-surface-muted);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:14px 18px;font-size:13px;color:var(--color-ink-muted);margin-bottom:8px}
+.grouphead{font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--color-primary-dark);margin:30px 0 4px;padding-bottom:6px;border-bottom:2px solid var(--color-primary)}
+@media(max-width:900px){.layout{grid-template-columns:1fr}.side{display:none}}
+</style></head><body>
+<div class="topbar"><div class="mark">H</div><div><h1>Block &amp; Variation Gallery</h1><div class="sub">Page Content Model — every block, every variation (not a finished page) · 2026-06-05</div></div>
+<div class="legend"><span class="li"><span class="dot tag-v1"></span>V1</span><span class="li"><span class="dot tag-v2"></span>V2</span><span class="li"><span class="dot tag-keep"></span>KEEP / existing</span><span class="li"><span class="dot tag-parked"></span>Parked</span></div></div>
+<div class="layout"><nav class="side"><div class="navgrp">Top of page · product grid · promo</div><a href="#blk-uspbar"><span class="dot tag-v1"></span>USP trust bar</a><a href="#blk-breadcrumb"><span class="dot tag-v1"></span>Breadcrumb</a><a href="#blk-h1-intro"><span class="dot tag-v1"></span>H1 + intro paragraph</a><a href="#blk-inpagenav"><span class="dot tag-v1"></span>In-page section nav</a><a href="#blk-productcollection"><span class="dot tag-v1"></span>Product collection grid (Block D / B5)</a><a href="#blk-bundleitem"><span class="dot tag-v1"></span>Product tile — full anatomy</a><a href="#blk-cardlabel"><span class="dot tag-v1"></span>Card label — 4 colours</a><a href="#blk-promocard"><span class="dot tag-v1"></span>Promo card</a><div class="navgrp">Editorial · trust · media</div><a href="#blk-contentMedia"><span class="dot tag-v1"></span>Content / Media</a><a href="#blk-rich-text-BE"><span class="dot tag-v1"></span>Rich text (escape hatch)</a><a href="#blk-blog-teaser-AJ"><span class="dot tag-v1"></span>Blog / inspiration teaser (B11)</a><a href="#blk-reviews-blockP"><span class="dot tag-v1"></span>Customer reviews (B8)</a><a href="#blk-faq-blockV"><span class="dot tag-v1"></span>FAQ (B13)</a><a href="#blk-b14-seo-text"><span class="dot tag-v1"></span>Bottom SEO text (B14)</a><a href="#blk-video"><span class="dot tag-v1"></span>Video (standalone block)</a><a href="#blk-person"><span class="dot tag-v2"></span>Product Manager byline (B15)</a><div class="navgrp">Navigation · brands · filter · PDP-specific</div><a href="#blk-g-pagecard"><span class="dot tag-v1"></span>Page card (BH + BI)</a><a href="#blk-usp-block-bb"><span class="dot tag-v1"></span>USP Block — page-specific USPs</a><a href="#blk-brands-blockc"><span class="dot tag-v1"></span>Brands block (b17)</a><a href="#blk-product-list-z"><span class="dot tag-v1"></span>Product list (Block Z) — crawlable link directory</a><a href="#blk-filter-engine-az"><span class="dot tag-parked"></span>FLP filter UI — F1 panel · F2 controls · B2b tree</a><a href="#blk-b17-pros-green"><span class="dot tag-keep"></span>B17 In-context USPs — Pros &amp; Green Claim</a><a href="#blk-b5-configurator"><span class="dot tag-v1"></span>B5 Configurator + bulk (simplified mock)</a><a href="#blk-b16-specs-matrix"><span class="dot tag-v2"></span>B16 Detailed specs matrix (stub)</a><div class="navgrp">V2 &amp; remaining DOM blocks</div><a href="#blk-b10-config-deepdive"><span class="dot tag-v2"></span>Configuration deep-dive</a><a href="#blk-b6-ingrid-card"><span class="dot tag-v2"></span>In-grid promo / editorial card</a><a href="#blk-b7-subgrid"><span class="dot tag-v2"></span>Variant / use-case sub-grid</a><a href="#blk-b7-product-description"><span class="dot tag-keep"></span>Product description</a><a href="#blk-b8-specs-design"><span class="dot tag-keep"></span>Specifications + Design</a><a href="#blk-b13-chat-help"><span class="dot tag-v2"></span>Chat &amp; Help centre</a></nav><main class="main">
+<div class="intro">A design reference, not a target layout. Each card shows one block on its own with the variations we agreed, tagged with its phase (V1/V2) and type (BUILD · GUIDELINE · KEEP). Source of truth = the markdown model. 30 blocks.</div>
+<h2 class="grouphead" id="group-A">Top of page · product grid · promo</h2><!-- ============================================================= -->
+<!-- AGENT A — top-of-page + product grid + promo                  -->
+<!-- Fragment only. Uses shared classes from _DESIGN-BRIEF.md.     -->
+<!-- ============================================================= -->
+<!-- ===== g-uspbar ===== -->
+<section class="blk" id="blk-uspbar">
+<div class="blkh">
+<div><span class="blkname">USP trust bar</span> <code class="blkid">g-uspbar</code></div>
+<span class="tag tag-v1">V1·BUILD</span>
+</div>
+<div class="blkbody">
+<div class="vars">
+<div class="var">
+<div class="vcap">4 brand USPs + Trustpilot (desktop)</div>
+<div class="usp">
+<span class="u"><span class="tick">✓</span> Best Price Guaranteed</span>
+<span class="u"><span class="tick">✓</span> Always a Perfect Design</span>
+<span class="u"><span class="tick">✓</span> 100% Satisfaction Guarantee</span>
+<span class="u"><span class="tick">✓</span> B-Corp &amp; FSC Certified</span>
+<span class="u" style="margin-left:auto;font-weight:600">
+            Excellent
+            <span class="stars" style="margin:0 4px">■■■■■</span>
+<span style="color:var(--color-ink-faint);font-weight:400">38,412 reviews on</span>
+<span class="stars">★ Trustpilot</span>
+</span>
+</div>
+<div class="note">SSR · non-clickable (Trustpilot widget excepted) · no headings inside · Trustpilot widget + 3-USP backbone are [V1·KEEP] (verify, don't reinvent).</div>
+</div>
+<div class="var">
+<div class="vcap">Mobile — wraps to two rows, all 4 stay visible</div>
+<div class="usp" style="max-width:360px;gap:10px">
+<span class="u"><span class="tick">✓</span> Best Price Guaranteed</span>
+<span class="u"><span class="tick">✓</span> Always a Perfect Design</span>
+<span class="u"><span class="tick">✓</span> 100% Satisfaction Guarantee</span>
+<span class="u"><span class="tick">✓</span> B-Corp &amp; FSC Certified</span>
+</div>
+<div class="note">≤56px cap on PLP/FLP; Trustpilot score + count stay visible without scrolling.</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ===== breadcrumb ===== -->
+<section class="blk" id="blk-breadcrumb">
+<div class="blkh">
+<div><span class="blkname">Breadcrumb</span> <code class="blkid">breadcrumb</code></div>
+<span class="tag tag-v1">V1·BUILD</span>
+</div>
+<div class="blkbody">
+<div class="vars">
+<div class="var">
+<div class="vcap">PLP / PDP — canonical chain (leaf = H1)</div>
+<div class="crumb"><a href="#">Home</a> › <a href="#">Promotional Printing</a> › <a href="#">Cotton Bags</a> › <span style="color:var(--color-ink)">Printed Cotton Bags</span></div>
+</div>
+<div class="var">
+<div class="vcap">FLP — earned filter as extra leaf (Approach C)</div>
+<div class="crumb"><a href="#">Home</a> › <a href="#">Drinkware</a> › <a href="#">Water Bottles</a> › <span style="color:var(--color-ink)">Aluminium</span></div>
+<div class="note">Build-time Contentful walker · mirrors BreadcrumbList JSON-LD exactly · locale-localised names (no English fall-through).</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ===== H1 + introParagraph ===== -->
+<section class="blk" id="blk-h1-intro">
+<div class="blkh">
+<div><span class="blkname">H1 + intro paragraph</span> <code class="blkid">pageHomeModular.Title / introParagraph</code></div>
+<span class="tag tag-v1">V1·BUILD</span>
+</div>
+<div class="blkbody">
+<div class="var">
+<div class="vcap">H1 + 2-line intro with Show more</div>
+<h1 class="h1m">Printed Cotton Bags</h1>
+<p class="lede">Custom cotton bags printed in your own design, from low minimums with fast next-day delivery across the UK. Choose from organic and recycled fabrics, multiple sizes and handle styles… <span class="showmore">Show more</span></p>
+<div class="note">Title field = customer-facing H1 (V1·BUILD); introParagraph field/structure V1·BUILD, copy V1·GUIDELINE · 2 lines mobile / 4 desktop · full text always in DOM · no links.</div>
+</div>
+</div>
+</section>
+<!-- ===== in-page-nav-AH ===== -->
+<section class="blk" id="blk-inpagenav">
+<div class="blkh">
+<div><span class="blkname">In-page section nav</span> <code class="blkid">in-page-nav-AH</code></div>
+<span class="tag tag-v1">V1·BUILD</span>
+</div>
+<div class="blkbody">
+<div class="var">
+<div class="vcap">Sticky jump-nav pills (desktop-only, real anchors)</div>
+<nav class="jump">
+<a href="#">Products</a>
+<a href="#">How it works</a>
+<a href="#">Materials</a>
+<a href="#">Reviews</a>
+<a href="#">FAQ</a>
+<a href="#">Guides</a>
+</nav>
+<div class="note">Real <code class="blkid">&lt;a href="#id"&gt;</code> · hard cap 8 · order mirrors on-page sections · reviews excluded as a target · SSR · no schema.</div>
+</div>
+</div>
+</section>
+<!-- ===== productCollection grid ===== -->
+<section class="blk" id="blk-productcollection">
+<div class="blkh">
+<div><span class="blkname">Product collection grid (Block D / B5)</span> <code class="blkid">productCollection</code></div>
+<span class="tag tag-v1">V1·BUILD</span>
+</div>
+<div class="blkbody">
+<div class="vars">
+<!-- 4-per-row -->
+<div class="var">
+<div class="vcap">4-per-row (portrait 3:4 tiles)</div>
+<div class="grid c4">
+<div class="pcard">
+<div class="media"><div class="ph p34">product</div>
+<div class="labels"><span class="lab primary">Most Popular</span></div>
+</div>
+<div class="body">
+<div class="pname">Premium Cotton Bag</div>
+<div class="pattr">Organic 140 g/m² · 38×42 cm</div>
+<div class="pprice">From <b>£1.29</b> <span style="color:var(--color-ink-faint)">/ 100 pcs</span></div>
+<div class="pdeliv">Next-day delivery available</div>
+</div>
+</div>
+<div class="pcard">
+<div class="media"><div class="ph p34">product</div>
+<div class="labels"><span class="lab eco">Eco</span></div>
+</div>
+<div class="body">
+<div class="pname">Recycled Tote Bag</div>
+<div class="pattr">Recycled cotton · 5 colours</div>
+<div class="pprice">From <b>£1.55</b> <span style="color:var(--color-ink-faint)">/ 100 pcs</span></div>
+<div class="pdeliv">3–5 working days</div>
+</div>
+</div>
+<div class="pcard">
+<div class="media"><div class="ph p34">product</div></div>
+<div class="body">
+<div class="pname">Drawstring Bag</div>
+<div class="pattr">Cotton canvas · 1 colour print</div>
+<div class="pprice">From <b>£0.98</b> <span style="color:var(--color-ink-faint)">/ 100 pcs</span></div>
+<div class="pdeliv">Next-day delivery available</div>
+</div>
+</div>
+<div class="pcard">
+<div class="media"><div class="ph p34">product</div>
+<div class="labels"><span class="lab default">New</span></div>
+</div>
+<div class="body">
+<div class="pname">Long-Handle Shopper</div>
+<div class="pattr">Heavy 280 g/m² · full-colour</div>
+<div class="pprice">From <b>£1.89</b> <span style="color:var(--color-ink-faint)">/ 100 pcs</span></div>
+<div class="pdeliv">3–5 working days</div>
+</div>
+</div>
+</div>
+<div class="note">Each tile = real crawlable <code class="blkid">&lt;a&gt;</code> to a PDP · first tile = bestseller (sales-weighted) · max 1 badge per tile on B5.</div>
+</div>
+<!-- Fill-to-width -->
+<div class="var">
+<div class="vcap">Fill to full width — mixed rows (here 7 = 3 + 4)</div>
+<div class="grid c3" style="margin-bottom:14px">
+<div class="pcard"><div class="media"><div class="ph r43">product</div></div><div class="body"><div class="pname">Canvas Shopper A</div><div class="pprice">From <b>£1.40</b></div></div></div>
+<div class="pcard"><div class="media"><div class="ph r43">product</div></div><div class="body"><div class="pname">Canvas Shopper B</div><div class="pprice">From <b>£1.45</b></div></div></div>
+<div class="pcard"><div class="media"><div class="ph r43">product</div></div><div class="body"><div class="pname">Canvas Shopper C</div><div class="pprice">From <b>£1.50</b></div></div></div>
+</div>
+<div class="grid c4">
+<div class="pcard"><div class="media"><div class="ph p34">product</div></div><div class="body"><div class="pname">Tote D</div><div class="pprice">From <b>£1.10</b></div></div></div>
+<div class="pcard"><div class="media"><div class="ph p34">product</div></div><div class="body"><div class="pname">Tote E</div><div class="pprice">From <b>£1.15</b></div></div></div>
+<div class="pcard"><div class="media"><div class="ph p34">product</div></div><div class="body"><div class="pname">Tote F</div><div class="pprice">From <b>£1.20</b></div></div></div>
+<div class="pcard"><div class="media"><div class="ph p34">product</div></div><div class="body"><div class="pname">Tote G</div><div class="pprice">From <b>£1.25</b></div></div></div>
+</div>
+<div class="note">Aspect ratio follows row width (3/row ≈ 1:1, 4/row ≈ 3:4). Fill does not apply on mobile (always 2/row).</div>
+</div>
+<!-- Carousel -->
+<div class="var">
+<div class="vcap">Carousel — manual arrows, 1-at-a-time, stop at end</div>
+<div style="display:flex;align-items:center;gap:10px">
+<button aria-label="Previous" class="btn alt" style="padding:8px 12px">‹</button>
+<div class="grid c4" style="flex:1">
+<div class="pcard"><div class="media"><div class="ph sq">product</div></div><div class="body"><div class="pname">Cotton Bag H</div><div class="pprice">From <b>£1.29</b></div></div></div>
+<div class="pcard"><div class="media"><div class="ph sq">product</div></div><div class="body"><div class="pname">Cotton Bag I</div><div class="pprice">From <b>£1.35</b></div></div></div>
+<div class="pcard"><div class="media"><div class="ph sq">product</div></div><div class="body"><div class="pname">Cotton Bag J</div><div class="pprice">From <b>£1.42</b></div></div></div>
+<div class="pcard" style="opacity:.55"><div class="media"><div class="ph sq">product</div></div><div class="body"><div class="pname">Cotton Bag K</div><div class="pprice">From <b>£1.48</b></div></div></div>
+</div>
+<button aria-label="Next" class="btn" style="padding:8px 12px">›</button>
+</div>
+<div class="note">visualOption "Show as carousel" overrides Fill · no loop · grid on mobile via "carousel on desktop only".</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ===== bundleItem (full anatomy) ===== -->
+<section class="blk" id="blk-bundleitem">
+<div class="blkh">
+<div><span class="blkname">Product tile — full anatomy</span> <code class="blkid">bundleItem</code></div>
+<span class="tag tag-v1">V1·BUILD</span>
+</div>
+<div class="blkbody">
+<div class="var">
+<div class="vcap">Full anatomy — labels overlay + colour swatches</div>
+<div class="grid c4">
+<div class="pcard" style="max-width:240px">
+<div class="media">
+<div class="ph p34">catalog image<br/>(in-setting on hover)</div>
+<div class="labels">
+<span class="lab primary">Most Popular</span>
+<span class="lab eco">Eco</span>
+</div>
+<div class="swrow">
+<span class="sw" style="background:#191919"></span>
+<span class="sw" style="background:#c0392b"></span>
+<span class="sw" style="background:#2e86c1"></span>
+<span class="sw" style="background:#27ae60"></span>
+</div>
+</div>
+<div class="body">
+<div class="pname">Premium Organic Cotton Bag</div>
+<div class="pattr">Organic 140 g/m²</div>
+<div class="pattr">Full-colour print</div>
+<div class="pprice">From <b>£1.29</b> <span style="color:var(--color-ink-faint)">for 100 pcs</span></div>
+<div class="pdeliv">✓ Next-day delivery available</div>
+</div>
+</div>
+<div style="grid-column:span 3;font-size:12.5px;color:var(--color-ink-faint);align-self:center">
+<strong style="color:var(--color-ink)">Anatomy (annotated):</strong>
+<ul style="margin:6px 0 0;padding-left:16px;line-height:1.7">
+<li><strong>Image</strong> — catalog default + in-setting hover (both SSR, swapped via CSS :hover, never JS)</li>
+<li><strong>Name</strong> — styled span/p (no H2/H3), = anchor text of the single tile <code class="blkid">&lt;a&gt;</code></li>
+<li><strong>2 attribute tags</strong> — fixed slots, concrete, ~3–6 words, differ per tile</li>
+<li><strong>From-price</strong> — "[from-price] for [reference qty]", locale-tuned, consistent across grid</li>
+<li><strong>Delivery row</strong> — next-day / lead-time line</li>
+<li><strong>Labels overlay</strong> — card-label, max 2 at model (B5 renders 1)</li>
+<li><strong>Colour swatches</strong> — variant colours from the product</li>
+</ul>
+</div>
+</div>
+<div class="note">Card data read from the linked <code class="blkid">product</code> · destination resolves page → url → canonical PDP · contributes to page-level ItemList (no standalone schema).</div>
+</div>
+</div>
+</section>
+<!-- ===== card-label (all 4 colours) ===== -->
+<section class="blk" id="blk-cardlabel">
+<div class="blkh">
+<div><span class="blkname">Card label — 4 colours</span> <code class="blkid">card-label</code></div>
+<span class="tag tag-v1">V1·BUILD</span>
+</div>
+<div class="blkbody">
+<div class="var">
+<div class="vcap">Default / Primary / Design / Eco</div>
+<div style="display:flex;gap:14px;flex-wrap:wrap;align-items:flex-start">
+<div style="text-align:center">
+<span class="lab default">Most Popular</span>
+<div class="cap">Default · hand-authored</div>
+</div>
+<div style="text-align:center">
+<span class="lab primary">New</span>
+<div class="cap">Primary (green) · auto &lt;3mo</div>
+</div>
+<div style="text-align:center">
+<span class="lab design">Including Frame</span>
+<div class="cap">Design (blue)</div>
+</div>
+<div style="text-align:center">
+<span class="lab eco">Eco</span>
+<div class="cap">Eco-green · feed</div>
+</div>
+<div style="text-align:center">
+<span class="lab default" style="background:#fff3e0;color:#b45309;border-color:#f0d8b0">Sale</span>
+<div class="cap">Sale · product feed</div>
+</div>
+</div>
+<div class="note">Each label = crawler-readable <code class="blkid">&lt;span&gt;</code>, no schema · cap 2 at model, max 1 per tile on B5 · migration: live Secondary → Primary.</div>
+</div>
+</div>
+</section>
+<!-- ===== promoCard ===== -->
+<section class="blk" id="blk-promocard">
+<div class="blkh">
+<div><span class="blkname">Promo card</span> <code class="blkid">promoCard</code></div>
+<span class="tag tag-v1">V1·BUILD</span>
+</div>
+<div class="blkbody">
+<div class="vars">
+<!-- Cluster card -->
+<div class="var">
+<div class="vcap">Cluster card — lifestyle image, no discount</div>
+<div style="max-width:280px">
+<div class="promo" style="background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.45)),var(--color-primary)">
+<div style="font-weight:700;font-size:18px;line-height:1.25">Design your own eco tote</div>
+<div style="font-size:13px;opacity:.95;margin-top:6px">Pick organic or recycled fabric and print your full-colour design in minutes.</div>
+<span class="btn alt" style="align-self:flex-start;margin-top:12px">See collection</span>
+</div>
+</div>
+<div class="note">Action-led headline ≤10 words · one benefit sentence · CTA to a PLP · no fake urgency/countdowns.</div>
+</div>
+<!-- Discount card -->
+<div class="var">
+<div class="vcap">Discount card — distinct promo treatment, was / now (Homepage / promo slot only)</div>
+<div style="max-width:260px">
+<div class="promo disc" style="padding:0;overflow:hidden;min-height:0">
+<div class="ph r43" style="border:none;border-radius:0;position:relative;color:#bbb">
+              lifestyle / catalog image
+              <span style="position:absolute;top:10px;right:10px;background:var(--accent);color:#fff;font-weight:800;font-size:14px;border-radius:var(--pill);min-width:46px;height:46px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.2)">−15%</span>
+</div>
+<div style="padding:14px">
+<div style="font-weight:700;font-size:16px">Recycled Tote Bag</div>
+<div style="margin:6px 0 10px"><span class="strike">£1.82</span>  <b style="color:var(--color-primary);font-size:19px">£1.55</b></div>
+<span class="btn">Shop now</span>
+</div>
+</div>
+</div>
+<div class="note"><strong>Promo treatment, not a catalog tile</strong> — framed panel + discount flash badge + green now-price distinguish it from a <code class="blkid">bundleItem</code> (no attribute tags / delivery row). was/now both SSR from the pre-set price path · auto discount label (was−now)/was, 5%-bucketed, real <code class="blkid">&lt;span&gt;</code> · single-SKU mode emits Product/Offer JSON-LD.</div>
+</div>
+<!-- Coupon card -->
+<div class="var">
+<div class="vcap">Coupon card — Copy code</div>
+<div style="max-width:280px">
+<div class="promo">
+<div style="font-weight:700;font-size:18px">10% off your first order</div>
+<div style="font-size:13px;opacity:.95;margin-top:6px">Valid on all cotton bags. T&amp;Cs apply.</div>
+<div style="display:flex;gap:8px;align-items:center;margin-top:12px">
+<code class="blkid" style="background:rgba(255,255,255,.15);color:#fff;border-color:rgba(255,255,255,.35);font-size:13px;padding:4px 10px">BAGS10</code>
+<span class="btn alt">Copy and claim</span>
+</div>
+</div>
+</div>
+<div class="note">buttonStyle = Copy button (copies promoCode.code, no destination) · code is real text, never an image · T&amp;Cs live in subtitle, not on promoCode.</div>
+</div>
+<!-- BG carousel strip -->
+<div class="var">
+<div class="vcap">BG promo-cards carousel strip (B10, V1)</div>
+<div style="display:flex;align-items:center;gap:10px">
+<button aria-label="Previous" class="btn alt" style="padding:8px 12px">‹</button>
+<div class="grid c3" style="flex:1">
+<div class="promo" style="min-height:130px"><div style="font-weight:700">Bestsellers</div><span class="btn alt" style="align-self:flex-start;margin-top:auto">Shop now</span></div>
+<div class="promo disc" style="min-height:130px"><div style="font-weight:700">Eco range</div><div style="font-size:12px;color:var(--color-ink-faint)">FSC &amp; recycled fabrics</div><span class="btn design" style="align-self:flex-start;margin-top:auto">Design now</span></div>
+<div class="promo" style="min-height:130px;background:var(--design)"><div style="font-weight:700">New arrivals</div><span class="btn alt" style="align-self:flex-start;margin-top:auto">See collection</span></div>
+</div>
+<button aria-label="Next" class="btn" style="padding:8px 12px">›</button>
+</div>
+<div class="note">homeBlockTypeBG · renders only when ≥1 active promo card for page×locale · per-card heading level (no block heading) · event-driven cache. In-grid B6 card is V2 on PLP/FLP, V1 on PDP.</div>
+</div>
+</div>
+</div>
+</section>
+<h2 class="grouphead" id="group-B">Editorial · trust · media</h2><!-- ========================================================================
+     AGENT B — Editorial + Trust + Media
+     Blocks: contentMedia (S) · rich-text-BE · blog-teaser-AJ ·
+             reviews-blockP · faq-blockV · B14 SEO text · video · person
+     Fragment only — orchestrator supplies <style> + page chrome.
+     ======================================================================== -->
+<!-- ============================ contentMedia (Block S) ============================ -->
+<section class="blk" id="blk-contentMedia">
+<div class="blkh">
+<div><span class="blkname">Content / Media</span> <code class="blkid">contentMedia</code></div>
+<span class="tag tag-v1">V1·BUILD</span>
+</div>
+<div class="blkbody">
+<div class="vars">
+<!-- Single -->
+<div class="var">
+<div class="vcap">Single — image beside copy (+ caption) · one CTA below the copy</div>
+<div class="cm">
+<div>
+<h2 style="font-size:20px;font-weight:700;margin:0 0 8px">Soft-touch laminate that feels as premium as it looks</h2>
+<p style="margin:0 0 12px;color:var(--color-ink-muted)">Our soft-touch finish adds a velvety, fingerprint-resistant layer over your full-colour print. It deepens dark tones and gives flyers a tactile, high-end feel customers notice the moment they pick one up.</p>
+<span class="btn">Discover our collection</span>
+</div>
+<div>
+<div class="ph r43">Soft-touch flyer, in-setting</div>
+<div class="cap">Soft-touch laminated flyers on a studio desk.</div>
+</div>
+</div>
+<div class="note">mediaLayout = Single · 50/50 · the image is illustrative (<strong>not a link</strong>) · CTA renders below the copy · alt text comes from the linked <code class="blkid">asset.Description</code>.</div>
+</div>
+<!-- Pair beside text, single CTA -->
+<div class="var">
+<div class="vcap">Pair beside text — 2 smaller stacked images · imageSecondary set, only one CTA → CTA below the copy</div>
+<div class="cm">
+<div>
+<h2 style="font-size:20px;font-weight:700;margin:0 0 8px">Front and back, designed to work together</h2>
+<p style="margin:0 0 12px;color:var(--color-ink-muted)">See both sides before you order. The front carries your headline and brand; the reverse is the perfect place for opening hours, a map or a QR code.</p>
+<span class="btn">Shop double-sided flyers</span>
+</div>
+<div style="display:grid;gap:8px;align-content:start;max-width:80%;justify-self:end">
+<div><div class="ph w169">Front — brand side</div><div class="cap">Front of the double-sided flyer.</div></div>
+<div><div class="ph w169">Back — details side</div><div class="cap">Reverse with QR code.</div></div>
+</div>
+</div>
+<div class="note">Two smaller (~16:9) images stacked so the pair sits level with the copy · because only <code class="blkid">cta</code> is set (no <code class="blkid">ctaSecondary</code>), the single CTA renders below the copy as usual.</div>
+</div>
+<!-- Paired CTAs under images -->
+<div class="var">
+<div class="vcap">Pair + secondary CTA — both imageSecondary &amp; ctaSecondary filled → each CTA renders beneath its image</div>
+<h2 style="font-size:20px;font-weight:700;margin:0 0 8px">Matte vs gloss: the same design, two finishes</h2>
+<p style="margin:0 0 12px;color:var(--color-ink-muted);max-width:60ch">Hold them side by side and the difference is clear. Matte is understated and easy to write on; gloss is vivid and wipe-clean.</p>
+<div class="grid c2">
+<div>
+<div class="ph r43">Matte finish</div>
+<div class="cap">Matte laminate.</div>
+<span class="btn" style="margin-top:8px">Shop matte</span>
+</div>
+<div>
+<div class="ph r43">Gloss finish</div>
+<div class="cap">Gloss laminate.</div>
+<span class="btn" style="margin-top:8px">Shop gloss</span>
+</div>
+</div>
+<div class="note"><strong>The pairing trigger:</strong> when <code class="blkid">imageSecondary</code> AND <code class="blkid">ctaSecondary</code> are both filled, the two CTAs are <strong>connected to the images</strong> — primary CTA under <code class="blkid">image</code>, secondary under <code class="blkid">imageSecondary</code>. Independent destinations (matte → matte product, gloss → gloss product).</div>
+</div>
+<!-- Two CTAs, one image -->
+<div class="var">
+<div class="vcap">Secondary CTA, one image — ctaSecondary set but no imageSecondary → both CTAs side-by-side below the copy</div>
+<div class="cm">
+<div>
+<h2 style="font-size:20px;font-weight:700;margin:0 0 8px">Two ways to get started</h2>
+<p style="margin:0 0 12px;color:var(--color-ink-muted)">Browse ready-made templates or jump straight into the design tool with a blank canvas — whichever suits how you work.</p>
+<div style="display:flex;gap:10px;flex-wrap:wrap">
+<span class="btn">Shop templates</span>
+<span class="btn design">Design now</span>
+</div>
+</div>
+<div>
+<div class="ph r43">Design tool, in-setting</div>
+<div class="cap">The online editor.</div>
+</div>
+</div>
+<div class="note">Only one image, but <code class="blkid">ctaSecondary</code> is filled → both CTAs render <strong>next to each other below the copy</strong> as usual (no second image to pair with).</div>
+</div>
+<!-- Text-only -->
+<div class="var">
+<div class="vcap">Text-only state (both images empty → reading-width copy)</div>
+<h2 style="font-size:20px;font-weight:700;margin:0 0 8px">How we keep your colours consistent</h2>
+<p style="margin:0;color:var(--color-ink-muted);max-width:62ch">When no image is set, the block degrades gracefully to a full-width, reading-width editorial section — no empty media column, no layout shift. Heading, rich-text rules and any CTA still apply.</p>
+<div class="note">Supported empty state (not a new field): both images empty → text-only full-width. <strong>Tables forbidden here</strong> → use rich-text-BE.</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================ rich-text-BE ============================ -->
+<section class="blk" id="blk-rich-text-BE">
+<div class="blkh">
+<div><span class="blkname">Rich text (escape hatch)</span> <code class="blkid">homeBlockTypeBE</code></div>
+<span class="tag tag-v1">V1·BUILD · escape-hatch</span>
+</div>
+<div class="blkbody">
+<div class="vars">
+<!-- Comparison table -->
+<div class="var">
+<div class="vcap">Comparison table — the killer capability (real &lt;table&gt;)</div>
+<h2 style="font-size:20px;font-weight:700;margin:0 0 10px">Saddle-stitched vs perfect-bound vs Wire-O binding</h2>
+<table class="rtt">
+<thead>
+<tr>
+<th scope="col">Binding</th>
+<th scope="col">Best for</th>
+<th scope="col">Page count</th>
+<th scope="col">Lies flat?</th>
+<th scope="col">From</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row"><a href="#" style="color:var(--color-primary)">Saddle-stitched</a></th>
+<td>Brochures, programmes, thin catalogues</td>
+<td>8–64 pages</td>
+<td>Yes</td>
+<td><b>£0.42</b>/unit</td>
+</tr>
+<tr>
+<th scope="row"><a href="#" style="color:var(--color-primary)">Perfect-bound</a></th>
+<td>Magazines, thick catalogues, books</td>
+<td>40–500 pages</td>
+<td>No (square spine)</td>
+<td><b>£1.85</b>/unit</td>
+</tr>
+<tr>
+<th scope="row"><a href="#" style="color:var(--color-primary)">Wire-O</a></th>
+<td>Notebooks, manuals, presentations</td>
+<td>20–200 pages</td>
+<td>Yes (360°)</td>
+<td><b>£2.10</b>/unit</td>
+</tr>
+</tbody>
+</table>
+<div class="note">Renders as a real <code class="blkid">&lt;table&gt;</code> / <code class="blkid">&lt;th scope&gt;</code> · per-cell product links · no schema (a hand-built table never becomes ItemList/Product).</div>
+</div>
+<!-- Which-X linked list -->
+<div class="var">
+<div class="vcap">"Which binding suits you?" — linked list</div>
+<h3 style="font-size:16px;font-weight:700;margin:0 0 8px">Not sure which to pick?</h3>
+<ul style="margin:0;padding-left:18px;line-height:1.9">
+<li>Choosing on a budget — start with <a href="#" style="color:var(--color-primary)">saddle-stitched brochures</a></li>
+<li>Need a flat spine you can print on — go <a href="#" style="color:var(--color-primary)">perfect-bound</a></li>
+<li>Want pages that fold all the way back — pick <a href="#" style="color:var(--color-primary)">Wire-O bound</a></li>
+</ul>
+<div class="note">Inherits the B14 link budget (≈ max 5) · last resort only when Block S / B14 / B16 can't express it.</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================ blog-teaser-AJ ============================ -->
+<section class="blk" id="blk-blog-teaser-AJ">
+<div class="blkh">
+<div><span class="blkname">Blog / inspiration teaser (B11)</span> <code class="blkid">homeBlockTypeAJ</code></div>
+<span class="tag tag-v1">V1·BUILD</span>
+</div>
+<div class="blkbody">
+<h2 style="font-size:22px;font-weight:700;margin:0 0 4px">Flyer printing inspiration</h2>
+<p style="margin:0 0 14px;color:var(--color-ink-muted)">Real campaigns, layout tips and finishing ideas from our print specialists.</p>
+<div class="grid c3">
+<div class="pcard">
+<div class="media"><div class="ph r43">Article hero</div></div>
+<div class="body">
+<div class="pname">7 flyer designs that actually get read</div>
+<div class="pattr">A breakdown of the hooks, hierarchy and finishes behind flyers people keep.</div>
+</div>
+</div>
+<div class="pcard">
+<div class="media"><div class="ph r43">Article hero</div></div>
+<div class="body">
+<div class="pname">Matte or gloss? Choosing a flyer finish</div>
+<div class="pattr">When each finish wins, and how paper weight changes the feel in the hand.</div>
+</div>
+</div>
+<div class="pcard">
+<div class="media"><div class="ph r43">Article hero</div></div>
+<div class="body">
+<div class="pname">Print-ready files: a 5-minute checklist</div>
+<div class="pattr">Bleed, resolution and colour mode — the fixes that stop a reprint.</div>
+</div>
+</div>
+</div>
+<div class="note">Cards re-pointed to Page Article (image + title sourced there) · summary = <code class="blkid">Summary description</code> · whole card is one &lt;a&gt;, title is a span not an &lt;h3&gt; · ItemList/ListItem schema (no per-card Article schema).</div>
+</div>
+</section>
+<!-- ============================ reviews-blockP ============================ -->
+<section class="blk" id="blk-reviews-blockP">
+<div class="blkh">
+<div><span class="blkname">Customer reviews (B8)</span> <code class="blkid">homeBlockTypeP</code></div>
+<span class="tag tag-v1">V1·BUILD</span>
+</div>
+<div class="blkbody">
+<div class="vars">
+<!-- Surface A: company Trustpilot strip -->
+<div class="var">
+<div class="vcap">Surface A — company Trustpilot strip (Organization schema)</div>
+<div class="usp" style="justify-content:space-between">
+<div class="u">
+<span class="stars">★★★★★</span>
+<span><b>4.6</b> out of 5</span>
+<span style="color:var(--color-ink-faint)">based on 18,204 reviews</span>
+</div>
+<div class="u">
+<span class="ph" style="width:90px;height:24px">Trustpilot</span>
+<a class="showmore" href="#">See all reviews</a>
+</div>
+</div>
+<div class="note">Company-level rating · the ONLY review schema sitewide (<code class="blkid">AggregateRating</code> nested in Organization, emitted by g-uspbar) · UI reuses the existing widget [V1·KEEP].</div>
+</div>
+<!-- Surface B: category-relevant cards by tag -->
+<div class="var">
+<div class="vcap">Surface B — "Why UK customers choose flyers" (by tag)</div>
+<h2 style="font-size:20px;font-weight:700;margin:0 0 10px">Why UK customers choose our flyers</h2>
+<div class="grid c3">
+<div class="rev">
+<div class="stars">★★★★★</div>
+<p style="margin:6px 0 8px">“Colours were spot-on and the matte finish feels really premium. Reordering for our next event already.”</p>
+<div style="color:var(--color-ink-faint);font-size:12px">Hannah P. · Events manager · 12 May 2026</div>
+</div>
+<div class="rev">
+<div class="stars">★★★★★</div>
+<p style="margin:6px 0 8px">“Uploaded my artwork at 9am, flyers arrived two days later. Crisp print, no surprises.”</p>
+<div style="color:var(--color-ink-faint);font-size:12px">Daniel O. · Café owner · 8 May 2026</div>
+</div>
+<div class="rev">
+<div class="stars">★★★★☆</div>
+<p style="margin:6px 0 8px">“Great value for a short run. The proof checker caught a bleed issue before I ordered.”</p>
+<div style="color:var(--color-ink-faint);font-size:12px">Priya S. · Freelance designer · 3 May 2026</div>
+</div>
+</div>
+<div class="note">Category-relevant reviews via <code class="blkid">tagToLoad</code> · <strong>UI-only widget, NO category schema</strong> (avoids pooled-rating rule) · ≥20-review threshold to render · B9 supporting renders BEFORE B8 on the PLP. Surface B auto-filter is [V2·BUILD] (no category schema).</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================ faq-blockV ============================ -->
+<section class="blk" id="blk-faq-blockV">
+<div class="blkh">
+<div><span class="blkname">FAQ (B13)</span> <code class="blkid">homeBlockTypeV + faqItem</code></div>
+<span class="tag tag-v1">V1·BUILD</span>
+</div>
+<div class="blkbody">
+<h2 style="font-size:22px;font-weight:700;margin:0 0 6px">FAQ about flyer printing</h2>
+<div>
+<div class="faqi">
+<div class="q"><span>What paper weights can I print flyers on?</span><span aria-hidden="true">−</span></div>
+<p style="margin:8px 0 0;color:var(--color-ink-muted)">We stock 135gsm to 400gsm. 135–170gsm suits leaflets and mailers; 300–400gsm gives postcards and premium flyers a sturdy, card-like feel. All weights print full-colour both sides as standard.</p>
+</div>
+<div class="faqi">
+<div class="q"><span>How fast can I get my flyers delivered?</span><span aria-hidden="true">+</span></div>
+</div>
+<div class="faqi">
+<div class="q"><span>Do you check my file before printing?</span><span aria-hidden="true">+</span></div>
+</div>
+<div class="faqi">
+<div class="q"><span>What's the difference between matte and gloss?</span><span aria-hidden="true">+</span></div>
+</div>
+<div class="faqi" style="border-bottom:none">
+<div class="q"><span>Can I order a small quantity?</span><span aria-hidden="true">+</span></div>
+</div>
+</div>
+<div class="note">Single-open accordion, first item open by default · SSR full Q+A in DOM · <code class="blkid">FAQPage</code> JSON-LD = exact DOM mirror (build-time parity gate) · 8–11 items in production.</div>
+</div>
+</section>
+<!-- ============================ B14 SEO text ============================ -->
+<section class="blk" id="blk-b14-seo-text">
+<div class="blkh">
+<div><span class="blkname">Bottom SEO text (B14)</span> <code class="blkid">B14 / seoText</code></div>
+<span class="tag tag-v1">V1·BUILD</span>
+</div>
+<div class="blkbody">
+<h2 style="font-size:22px;font-weight:700;margin:0 0 8px">Custom flyer printing in the UK</h2>
+<p style="margin:0 0 14px;color:var(--color-ink-muted);max-width:64ch">From single-sided leaflets to premium double-sided flyers, we print short and long runs on a full range of paper weights and finishes — with online proofing and fast UK delivery on every order.</p>
+<h3 style="font-size:16px;font-weight:700;margin:0 0 6px">Choosing the right flyer size</h3>
+<p style="margin:0 0 6px;color:var(--color-ink-muted);max-width:64ch">A5 is the all-rounder for handouts and mailers; A6 is pocket-friendly and economical for large runs; A4 works as a mini-poster or menu insert. <span class="showmore">Show more</span></p>
+<div style="height:1px;background:var(--color-border);margin:12px 0"></div>
+<h3 style="font-size:16px;font-weight:700;margin:0 0 6px;opacity:.55">Finishes and lamination explained</h3>
+<p style="margin:0;color:var(--color-ink-muted);max-width:64ch;opacity:.55">Matte, gloss, soft-touch and spot UV each change how a flyer feels and reads… <span class="showmore">Show more</span></p>
+<div class="note">Structured bottom-of-page SEO copy (NOT BE, NOT Block S) · collapsed/show-more look · B13 ≥5 entries OR B14 present = one INDEX-1 condition · excluded from FAQPage schema.</div>
+</div>
+</section>
+<!-- ============================ video ============================ -->
+<section class="blk" id="blk-video">
+<div class="blkh">
+<div><span class="blkname">Video (standalone block)</span> <code class="blkid">video</code></div>
+<span class="tag tag-v1">V1·BUILD</span>
+</div>
+<div class="blkbody">
+<div style="position:relative;border-radius:var(--radius);overflow:hidden">
+<div class="ph w169" style="border-radius:0">Video poster frame</div>
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
+<span style="width:64px;height:64px;border-radius:var(--pill);background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.2)">
+<span style="width:0;height:0;border-style:solid;border-width:11px 0 11px 18px;border-color:transparent transparent transparent var(--color-primary);margin-left:4px"></span>
+</span>
+</div>
+</div>
+<h3 style="font-size:16px;font-weight:700;margin:12px 0 4px">See how your flyers are printed and finished</h3>
+<p style="margin:0;color:var(--color-ink-muted);max-width:62ch">A 90-second look inside our press hall — from file check to laminating, cutting and dispatch.</p>
+<div class="note">Standalone body block (never on a product-grid card) · desktop autoplay-on-scroll (muted), mobile always click-to-play (poster + play button) · auto-emitted <code class="blkid">VideoObject</code> JSON-LD.</div>
+</div>
+</section>
+<!-- ============================ person ============================ -->
+<section class="blk" id="blk-person">
+<div class="blkh">
+<div><span class="blkname">Product Manager byline (B15)</span> <code class="blkid">person</code></div>
+<span class="tag tag-v2">V2·TEST</span>
+</div>
+<div class="blkbody">
+<h2 style="font-size:20px;font-weight:700;margin:0 0 10px">Meet your product manager</h2>
+<div class="byline">
+<div class="ph">Photo</div>
+<div>
+<div style="font-weight:700;font-size:15px">Marloes de Vries</div>
+<div style="color:var(--color-ink-faint);font-size:13px;margin:1px 0 6px">Flyers &amp; Leaflets Product Manager · HelloPrint
+           <a href="#" rel="me" style="color:var(--color-primary);font-weight:600">LinkedIn</a>
+</div>
+<p style="margin:0;color:var(--color-ink-muted)">Marloes has spent six years specifying flyer papers and finishes for UK campaigns — ask her anything about matching weight, lamination and run size to your brief.</p>
+</div>
+</div>
+<div class="note">Whole block + Person schema + LinkedIn <code class="blkid">rel="me"</code> is a V2 cohort-vs-control test on every surface · one canonical Person entity, category-specific expertise sentence + CTA on the byline · promotion gate ≥5% SoV lift over 8 weeks.</div>
+</div>
+</section>
+<h2 class="grouphead" id="group-C">Navigation · brands · filter · PDP-specific</h2><!-- Agent C — navigation + brands + filter + PDP/FLP-specific -->
+<!-- ============================================================ -->
+<!-- g-pagecard — BH + BI -->
+<!-- ============================================================ -->
+<section class="blk" id="blk-g-pagecard">
+<div class="blkh">
+<div><span class="blkname">Page card (BH + BI)</span> <code class="blkid">g-pagecard</code></div>
+<span class="tag tag-v1">V1·BUILD</span>
+</div>
+<div class="blkbody">
+<p class="note">Shared page-card component — navigation, never a product tile (no price, no badge, no CTA, no schema). One card = one crawlable <code class="blkid">&lt;a&gt;</code> to a canonical page; image is always the linked entity's catalog image. Same card markup; only the surrounding visualisation differs.</p>
+<div class="vars">
+<!-- BH -->
+<div class="var">
+<div class="vcap">Block BH — promotional (promo card + featured page cards)</div>
+<div class="grid c4">
+<div class="promo">
+<div>
+<div style="font-size:11px;font-weight:700;letter-spacing:.04em;opacity:.85">FEATURED</div>
+<div style="font-size:18px;font-weight:700;margin-top:6px">Business cards from premium ranges</div>
+</div>
+<div style="font-size:12px;opacity:.9">Explore the collection →</div>
+</div>
+<a class="pcn" href="#" style="text-decoration:none;color:inherit">
+<div class="ph sq" style="width:54px;height:54px;flex:none">img</div>
+<div><div class="pname">Luxury business cards</div><div class="pattr" style="color:var(--color-primary)">→</div></div>
+</a>
+<a class="pcn" href="#" style="text-decoration:none;color:inherit">
+<div class="ph sq" style="width:54px;height:54px;flex:none">img</div>
+<div><div class="pname">Folded business cards</div><div class="pattr" style="color:var(--color-primary)">→</div></div>
+</a>
+<a class="pcn" href="#" style="text-decoration:none;color:inherit">
+<div class="ph sq" style="width:54px;height:54px;flex:none">img</div>
+<div><div class="pname">Square business cards</div><div class="pattr" style="color:var(--color-primary)">→</div></div>
+</a>
+</div>
+<p class="note">BH renders larger cards beside a required promo card, high on the page. <span class="tag tag-v2">V2</span> Algolia auto-selection of which cards surface (V1 = author-selected).</p>
+</div>
+<!-- BI -->
+<div class="var">
+<div class="vcap">Block BI — compact subcategory / related index grid</div>
+<div class="grid c4">
+<a class="pcn" href="#" style="text-decoration:none;color:inherit"><div class="ph sq" style="width:42px;height:42px;flex:none">img</div><div class="pname">Flyers</div></a>
+<a class="pcn" href="#" style="text-decoration:none;color:inherit"><div class="ph sq" style="width:42px;height:42px;flex:none">img</div><div class="pname">Leaflets</div></a>
+<a class="pcn" href="#" style="text-decoration:none;color:inherit"><div class="ph sq" style="width:42px;height:42px;flex:none">img</div><div class="pname">Folded leaflets</div></a>
+<a class="pcn" href="#" style="text-decoration:none;color:inherit"><div class="ph sq" style="width:42px;height:42px;flex:none">img</div><div class="pname">Posters</div></a>
+<a class="pcn" href="#" style="text-decoration:none;color:inherit"><div class="ph sq" style="width:42px;height:42px;flex:none">img</div><div class="pname">Brochures</div></a>
+<a class="pcn" href="#" style="text-decoration:none;color:inherit"><div class="ph sq" style="width:42px;height:42px;flex:none">img</div><div class="pname">Booklets</div></a>
+<a class="pcn" href="#" style="text-decoration:none;color:inherit"><div class="ph sq" style="width:42px;height:42px;flex:none">img</div><div class="pname">Roller banners</div></a>
+<a class="pcn" href="#" style="text-decoration:none;color:inherit"><div class="ph sq" style="width:42px;height:42px;flex:none">img</div><div class="pname">Stickers</div></a>
+</div>
+<p class="note">BI renders <strong>all</strong> <code class="blkid">subitems[]</code> (cap removed) in a compact grid, low on the page. Decoupled from B12 related products — hand-authored, no shared schema.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================================ -->
+<!-- usp-block-BB — page-specific USP grid -->
+<!-- ============================================================ -->
+<section class="blk" id="blk-usp-block-bb">
+<div class="blkh">
+<div><span class="blkname">USP Block — page-specific USPs</span> <code class="blkid">homeBlockTypeBB</code></div>
+<span class="tag tag-v1">V1·BUILD</span>
+</div>
+<div class="blkbody">
+<p class="note">"Why this category with us" — optional block heading + intro + 3–5 USP items (semantic icon + styled title + concise description + single optional link). Below the grid. Must <strong>not</strong> duplicate the global <code class="blkid">g-uspbar</code>.</p>
+<div class="vars">
+<div class="var">
+<div class="vcap">USP grid — 4 items (icon · title · description)</div>
+<h2 style="font-size:20px;font-weight:700;margin:4px 0">Why print your flyers with us</h2>
+<p class="lede" style="margin:0 0 14px">Designed for British businesses that need it right, first time.</p>
+<div class="grid c4">
+<div>
+<div class="ph sq" style="width:40px;height:40px">brush</div>
+<div class="pname" style="margin-top:8px">Free design check</div>
+<div class="pattr">A specialist reviews every file before it prints — no nasty surprises.</div>
+<a class="showmore" href="#">How it works</a>
+</div>
+<div>
+<div class="ph sq" style="width:40px;height:40px">euro</div>
+<div class="pname" style="margin-top:8px">Best price, guaranteed</div>
+<div class="pattr">Found it cheaper? We match it. Bulk pricing scales the more you order.</div>
+</div>
+<div>
+<div class="ph sq" style="width:40px;height:40px">truck</div>
+<div class="pname" style="margin-top:8px">Fast UK delivery</div>
+<div class="pattr">Order today, choose your delivery date — express slots available.</div>
+</div>
+<div>
+<div class="ph sq" style="width:40px;height:40px">leaf</div>
+<div class="pname" style="margin-top:8px">Sustainable stock</div>
+<div class="pattr">FSC-certified papers as standard across the flyer range.</div>
+<a class="showmore" href="#">Our materials</a>
+</div>
+</div>
+<p class="note">Min 3 / max 5 items; columns author-set, row flexes full-width; 1-up on mobile. Icons decorative (<code class="blkid">alt=""</code>). Item titles are styled text, not H3. No inline links in descriptions.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================================ -->
+<!-- brands-blockC — 3 display modes -->
+<!-- ============================================================ -->
+<section class="blk" id="blk-brands-blockc">
+<div class="blkh">
+<div><span class="blkname">Brands block (b17)</span> <code class="blkid">homeBlockTypeC</code></div>
+<span class="tag tag-v1">V1·BUILD</span>
+</div>
+<div class="blkbody">
+<p class="note">One <code class="blkid">brands[]</code> list, one <code class="blkid">displayMode</code> switch, three templates at different prominence. Below the product grid. Schema only for brands we sell; partner logos decorative.</p>
+<div class="vars">
+<!-- Logo strip -->
+<div class="var">
+<div class="vcap">Mode 1 — Logo strip (lowest prominence)</div>
+<div class="brandstrip">
+<div class="ph">logo</div>
+<div class="ph">logo</div>
+<div class="ph">logo</div>
+<div class="ph">logo</div>
+<div class="ph">logo</div>
+<div class="ph">logo</div>
+</div>
+<p class="note">Many small greyscale logos in a row, carousel-aware (≥4). Subtle social proof; link optional per brand. Partner logos = decorative <code class="blkid">&lt;img&gt;</code> + alt, no commercial schema.</p>
+</div>
+<!-- Logo directory -->
+<div class="var">
+<div class="vcap">Mode 2 — Logo directory (medium · navigable brand index)</div>
+<div class="grid c4">
+<a class="ph r43" href="#" style="text-decoration:none">Moo</a>
+<a class="ph r43" href="#" style="text-decoration:none">Avery</a>
+<a class="ph r43" href="#" style="text-decoration:none">Sigel</a>
+<a class="ph r43" href="#" style="text-decoration:none">Herma</a>
+<a class="ph r43" href="#" style="text-decoration:none">Rössler</a>
+<a class="ph r43" href="#" style="text-decoration:none">Clairefontaine</a>
+</div>
+<p class="note">Full-colour logo tiles (no product image), each a real link to the brand's page. ≥6, no hard max. Directory mode wraps sold brands in an <code class="blkid">ItemList</code> of <code class="blkid">Brand</code> items.</p>
+</div>
+<!-- Brand spotlight -->
+<div class="var">
+<div class="vcap">Mode 3 — Brand spotlight (highest · left meta + right media)</div>
+<div class="cm">
+<div>
+<div class="ph" style="width:120px;height:40px">brand logo</div>
+<p class="lede" style="margin:10px 0">Premium recycled papers loved by studios — warm whites, deep blacks, certified sustainable.</p>
+<a class="btn" href="#">Shop the range</a>
+</div>
+<div class="grid c2">
+<a class="pcn" href="#" style="text-decoration:none;color:inherit"><div class="ph sq" style="width:48px;height:48px;flex:none">img</div><div class="pname">Recycled flyers</div></a>
+<a class="pcn" href="#" style="text-decoration:none;color:inherit"><div class="ph sq" style="width:48px;height:48px;flex:none">img</div><div class="pname">Kraft business cards</div></a>
+</div>
+</div>
+<p class="note">Left meta = identity (Logo | Name, falls back to Name) + optional description (≤120 chars, hidden when empty) + CTA (only when Destination set). Right media = one type per block, no mixing (<code class="blkid">in-setting</code> · <code class="blkid">page-cards</code> · <code class="blkid">bundle-items</code>); shown here as 2 page-cards. 1–6 brands. Logo + each right-side card link independently.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================================ -->
+<!-- product-list-Z — multi-column crawlable link list -->
+<!-- ============================================================ -->
+<section class="blk" id="blk-product-list-z">
+<div class="blkh">
+<div><span class="blkname">Link Hub (Block Z) — link list at scale</span> <code class="blkid">homeBlockTypeZ</code></div>
+<span class="tag tag-v1">V1·BUILD</span>
+</div>
+<div class="blkbody">
+<p class="note">An overview of links at scale (subcategories, products, themes, brands, blogs, helpcenter/wiki) for customers + crawlers, on homepage / hub pages and PLP/FLP. <strong>NOT</strong> the visual grid (B5). Groups are <code class="blkid">linkGroup</code> (manual or rule source); links are <code class="blkid">linkItem</code>. Anchor = the <strong>name</strong>, never the slug. <code class="blkid">displayType</code> text | chips · <code class="blkid">showDescription</code> · <code class="blkid">showMore</code> (collapse &gt;5). No schema.</p>
+<div class="vars">
+<div class="var">
+<div class="vcap">displayType: text — shop by material / size / colour</div>
+<h2 style="font-size:20px;font-weight:700;margin:4px 0 12px">Shop flyers by</h2>
+<div class="zcols">
+<div>
+<h5>By material</h5>
+<ul>
+<li><a href="#">Recycled flyers</a></li>
+<li><a href="#">Silk flyers</a></li>
+<li><a href="#">Gloss flyers</a></li>
+<li><a href="#">Uncoated flyers</a></li>
+<li><a class="showmore" href="#">Show all</a></li>
+</ul>
+</div>
+<div>
+<h5>By size</h5>
+<ul>
+<li><a href="#">A4 flyers</a></li>
+<li><a href="#">A5 flyers</a></li>
+<li><a href="#">A6 flyers</a></li>
+<li><a href="#">DL flyers</a></li>
+</ul>
+</div>
+<div>
+<h5>By colour</h5>
+<ul>
+<li><a href="#">Full-colour flyers</a></li>
+<li><a href="#">Black &amp; white flyers</a></li>
+<li><a href="#">Single-sided flyers</a></li>
+<li><a href="#">Double-sided flyers</a></li>
+</ul>
+</div>
+<div>
+<h5>Related categories</h5>
+<ul>
+<li><a href="#">Leaflets</a></li>
+<li><a href="#">Folded leaflets</a></li>
+<li><a href="#">Posters</a></li>
+<li><a href="#">Brochures</a></li>
+</ul>
+</div>
+</div>
+<p class="note">Block owns one H2; column titles = H3 / styled text, not stacked H2s. Block-level + per-column "Show all". Every link a real SSR <code class="blkid">&lt;a&gt;</code> to a canonical URL.</p>
+</div>
+
+<div class="var">
+<div class="vcap">displayType: chips</div>
+<h2 style="font-size:18px;font-weight:700;margin:4px 0 12px">Popular sizes</h2>
+<div>
+<span style="display:inline-block;border:1px solid #e5e5e5;border-radius:9999px;padding:5px 12px;font-size:13px;margin:0 6px 8px 0">A6 flyers</span><span style="display:inline-block;border:1px solid #e5e5e5;border-radius:9999px;padding:5px 12px;font-size:13px;margin:0 6px 8px 0">A5 flyers</span><span style="display:inline-block;border:1px solid #e5e5e5;border-radius:9999px;padding:5px 12px;font-size:13px;margin:0 6px 8px 0">A4 flyers</span><span style="display:inline-block;border:1px solid #e5e5e5;border-radius:9999px;padding:5px 12px;font-size:13px;margin:0 6px 8px 0">DL flyers</span><span style="display:inline-block;border:1px solid #e5e5e5;border-radius:9999px;padding:5px 12px;font-size:13px;margin:0 6px 8px 0">Square flyers</span><span style="display:inline-block;border:1px solid #e5e5e5;border-radius:9999px;padding:5px 12px;font-size:13px;margin:0 6px 8px 0">Folded flyers</span>
+</div>
+</div>
+<div class="var">
+<div class="vcap">showDescription = on (text mode → rows)</div>
+<div style="display:flex;flex-direction:column;gap:10px">
+<a href="#" style="text-decoration:none;color:#008539"><span style="display:block;font-size:14px;color:#008539">Which paper weight to choose</span><span style="display:block;font-size:12px;color:#555">135gsm vs 300gsm for flyers and leaflets.</span></a>
+<a href="#" style="text-decoration:none;color:#008539"><span style="display:block;font-size:14px;color:#008539">Bleed &amp; safe margins explained</span><span style="display:block;font-size:12px;color:#555">Set up artwork so nothing gets cut.</span></a>
+</div>
+</div>
+<div class="var">
+<div class="vcap">showMore = on (collapse each group to 5)</div>
+<ul style="margin:0;padding-left:14px;color:#008539;font-size:13px">
+<li><a href="#">Standard business cards</a></li>
+<li><a href="#">Square business cards</a></li>
+<li><a href="#">Folded business cards</a></li>
+<li><a href="#">Recycled business cards</a></li>
+<li><a href="#">Premium business cards</a></li>
+</ul>
+<a class="showmore" href="#">Show more (24) ▾</a>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================================ -->
+<!-- surface-FLP filter UI — F1 + F2 + B2b (PARKED) -->
+<!-- ============================================================ -->
+<section class="blk" id="blk-filter-engine-az">
+<div class="blkh">
+<div><span class="blkname">FLP filter UI — F1 panel · F2 controls · B2b tree</span> <code class="blkid">homeBlockTypeAZ</code></div>
+<span class="tag tag-v1">V1·BUILD</span>
+</div>
+<div class="blkbody">
+<p class="note"><strong>Defined</strong> (was parked). Config = a <code class="blkid">filterConfig</code> JSON block on <code class="blkid">pageHomeModular</code>; <strong>Merchant Catalogue = source of truth</strong> (store keys, resolve labels/counts live). Indexation is <strong>destination-only</strong> — a filter is indexable only as a unique-content destination PLP; everything else is a query parameter. F1 / F2 / B2b render-only contract below is unchanged.</p>
+<div class="vars dim">
+<!-- F1 + F2 + B2b -->
+<div class="var">
+<div class="vcap">F1 facet panel + F2 controls strip + B2b taxonomy tree</div>
+<!-- F2 controls strip -->
+<div class="usp" style="justify-content:space-between;margin-bottom:14px">
+<div class="u"><strong>248 products</strong></div>
+<div class="u">Per page: 24 · 48 · 96</div>
+<div class="u">Sort: Relevance · Price · Delivery</div>
+</div>
+<div class="jump" style="margin-bottom:14px">
+<a href="#">Aluminium ×</a>
+<a href="#">500ml ×</a>
+<a class="showmore" href="#" style="background:none;border:none;padding:0;align-self:center">Clear all</a>
+</div>
+<div class="facet">
+<!-- F1 facet panel + B2b tree (left column) -->
+<div>
+<!-- B2b taxonomy tree -->
+<div class="facetpanel" style="margin-bottom:12px">
+<div class="pname" style="margin-bottom:6px">Subcategories</div>
+<div class="fv"><a href="#">Water bottles</a></div>
+<div class="fv" style="padding-left:12px"><a href="#">Aluminium bottles</a></div>
+<div class="fv" style="padding-left:12px"><a href="#">Insulated bottles</a></div>
+<div class="fv"><a href="#">Sports bottles</a></div>
+</div>
+<!-- F1 facet panel -->
+<div class="facetpanel">
+<div class="pname" style="margin-bottom:6px">Material</div>
+<div class="fv"><span><a href="#">Aluminium</a></span><span>(12)</span></div>
+<div class="fv"><span><button style="background:none;border:none;padding:0;color:inherit;cursor:default">Stainless steel</button></span><span>(34)</span></div>
+<div class="fv" style="opacity:.5"><span aria-disabled="true">Glass</span><span>(0)</span></div>
+<div class="pname" style="margin:10px 0 6px">Capacity</div>
+<div aria-current="true" class="fv"><span><a href="#"><strong>500ml</strong></a></span><span>(18)</span></div>
+<div class="fv"><span><button style="background:none;border:none;padding:0;color:inherit;cursor:default">750ml</button></span><span>(22)</span></div>
+<div class="fv"><span><button style="background:none;border:none;padding:0;color:inherit;cursor:default">1L</button></span><span>(9)</span></div>
+</div>
+</div>
+<!-- results placeholder (right column) -->
+<div class="grid c3">
+<div class="ph r43">result</div>
+<div class="ph r43">result</div>
+<div class="ph r43">result</div>
+<div class="ph r43">result</div>
+<div class="ph r43">result</div>
+<div class="ph r43">result</div>
+</div>
+</div>
+<p class="note">Five-state contract: earned facet = <code class="blkid">&lt;a href&gt;</code>; non-earned = <code class="blkid">&lt;button&gt;</code>; zero-result = <code class="blkid">&lt;span aria-disabled&gt;</code>; applied = <code class="blkid">aria-current</code>/<code class="blkid">aria-pressed</code>. Counts SSR'd inline from PCM/Algolia. Single-select per axis. B2b tree = within-bucket only, every branch a crawlable <code class="blkid">&lt;a&gt;</code>.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================================ -->
+<!-- PDP-specific — B17 / B5 / B16 -->
+<!-- ============================================================ -->
+<!-- B17 Pros & Green Claim -->
+<section class="blk" id="blk-b17-pros-green">
+<div class="blkh">
+<div><span class="blkname">B17 In-context USPs — Pros &amp; Green Claim</span> <code class="blkid">product.Pros</code></div>
+<span class="tag tag-keep">V1·KEEP / V2</span>
+</div>
+<div class="blkbody">
+<p class="note">PDP-only, between B4 intro and B5 configurator. One B17 component, not two. Pros (b17-2) = V1·KEEP; Green Claim (b17-3) = V2·BUILD (re-source).</p>
+<div class="vars">
+<div class="var">
+<div class="vcap">Pros list <span class="tag tag-v1">V1·KEEP</span></div>
+<div class="usp">
+<div class="u"><span class="tick">✓</span> Premium 350gsm silk stock as standard</div>
+<div class="u"><span class="tick">✓</span> Free file &amp; design check before print</div>
+<div class="u"><span class="tick">✓</span> Delivery from 2 working days</div>
+<div class="u"><span class="tick">✓</span> Match-back guarantee on colour</div>
+</div>
+</div>
+<div class="var">
+<div class="vcap">Green Claim stub <span class="tag tag-v2">V2</span></div>
+<div class="usp" style="background:#f3f8ef;border:1px solid #dceccd">
+<div class="u"><span class="ph sq" style="width:28px;height:28px;flex:none">leaf</span> <span><strong>FSC-certified &amp; carbon-balanced</strong> — sourced from responsibly managed forests. <span class="ph" style="display:inline-block;width:90px;height:11px;vertical-align:middle">claim</span></span></div>
+</div>
+<p class="note">V2 re-source — structured sustainability claim with substantiation link (placeholder shown). Represented, never silently dropped.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- B5 Configurator -->
+<section class="blk" id="blk-b5-configurator">
+<div class="blkh">
+<div><span class="blkname">B5 Configurator + bulk (simplified mock)</span> <code class="blkid">product (native)</code></div>
+<span class="tag tag-v1">V1·BUILD</span>
+</div>
+<div class="blkbody">
+<p class="note">PDP conversion engine — native product section, not a Content Block. A few option rows + sticky from-price. Schema fixed at SSR pre-set price (configurator changes do not update schema).</p>
+<div class="vars">
+<div class="var">
+<div class="vcap">Option rows + sticky price</div>
+<div class="cm">
+<div>
+<div style="margin-bottom:12px">
+<div class="pname" style="margin-bottom:6px">Size</div>
+<div class="jump"><a href="#" style="background:#e8f5e9;border-color:var(--color-primary)">A5</a><a href="#">A6</a><a href="#">DL</a><a href="#">A4</a></div>
+</div>
+<div style="margin-bottom:12px">
+<div class="pname" style="margin-bottom:6px">Paper</div>
+<div class="jump"><a href="#" style="background:#e8f5e9;border-color:var(--color-primary)">350gsm silk</a><a href="#">170gsm gloss</a><a href="#">300gsm recycled</a></div>
+</div>
+<div style="margin-bottom:12px">
+<div class="pname" style="margin-bottom:6px">Sides</div>
+<div class="jump"><a href="#">Single-sided</a><a href="#" style="background:#e8f5e9;border-color:var(--color-primary)">Double-sided</a></div>
+</div>
+<div>
+<div class="pname" style="margin-bottom:6px">Quantity</div>
+<div class="jump"><a href="#">100</a><a href="#" style="background:#e8f5e9;border-color:var(--color-primary)">500</a><a href="#">1,000</a><a href="#">2,500</a><a href="#">Custom</a></div>
+</div>
+</div>
+<div>
+<div class="rev" style="position:sticky;top:12px">
+<div class="pdeliv">500 × A5 double-sided silk</div>
+<div class="pprice" style="margin:6px 0">From <b style="font-size:22px">£38.40</b> <span class="pattr" style="display:inline">excl. VAT</span></div>
+<div class="pdeliv">Delivery Tue 9 Jun — choose your date</div>
+<button class="btn" style="width:100%;justify-content:center;margin-top:10px">Add to basket</button>
+<div class="note" style="margin-top:8px">Price scales with quantity · bulk discounts applied automatically.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- B16 Specs matrix stub -->
+<section class="blk" id="blk-b16-specs-matrix">
+<div class="blkh">
+<div><span class="blkname">B16 Detailed specs matrix (stub)</span> <code class="blkid">B16 — new</code></div>
+<span class="tag tag-v2">V2</span>
+</div>
+<div class="blkbody">
+<p class="note">PDP-only Mixam-style structured spec/pricing matrix. Entire block is V2·BUILD (anti-cannibalisation b16-7/16-19 = V2·GUIDELINE). Stub shown.</p>
+<div class="vars">
+<div class="var">
+<div class="vcap">Spec / pricing matrix <span class="tag tag-v2">V2</span></div>
+<table class="rtt">
+<thead><tr><th>Size</th><th>Paper</th><th>250</th><th>500</th><th>1,000</th></tr></thead>
+<tbody>
+<tr><td>A5</td><td>350gsm silk</td><td>£29</td><td>£38</td><td>£52</td></tr>
+<tr><td>A5</td><td>300gsm recycled</td><td>£31</td><td>£41</td><td>£56</td></tr>
+<tr><td>A6</td><td>350gsm silk</td><td>£24</td><td>£31</td><td>£43</td></tr>
+<tr><td>DL</td><td>170gsm gloss</td><td>£22</td><td>£28</td><td>£39</td></tr>
+</tbody>
+</table>
+<p class="note">Structured size × paper × quantity matrix. V2 stub — full build pending.</p>
+</div>
+</div>
+</div>
+</section>
+<h2 class="grouphead" id="group-D">V2 &amp; remaining DOM blocks</h2><!-- ===================== GROUP D — V2 & remaining DOM blocks ===================== -->
+<section class="blk" id="blk-b10-config-deepdive">
+<div class="blkh">
+<div><span class="blkname">Configuration deep-dive</span> <code class="blkid">B10 · native product section</code></div>
+<span class="tag tag-v2">V2·GUIDELINE</span>
+</div>
+<div class="blkbody">
+<div class="var">
+<div class="vcap">Educational prose cards — one H3 sub-block per configurable attribute group</div>
+<h2 style="font-size:22px;font-weight:700;margin:0 0 4px">Choosing your booklet</h2>
+<p style="margin:0 0 16px;color:var(--color-ink-muted);max-width:64ch">The layer that explains <em>why this option for which buyer</em> — recommendation-first, brand voice, never a spec dump. Broadened from the old "Materials &amp; finishes" block to <strong>every</strong> attribute group on the product.</p>
+<h3 id="papers" style="font-size:15px;font-weight:700;margin:6px 0 8px">Paper</h3>
+<div class="grid c3" style="margin-bottom:18px">
+<div style="border:1px solid var(--color-border);border-radius:var(--radius);overflow:hidden;background:#fff">
+<div class="ph w169" style="border:none;border-radius:0">silk paper sample</div>
+<div style="padding:12px">
+<div style="font-weight:700;font-size:14px">170 gsm Silk</div>
+<div style="font-size:11.5px;color:var(--color-primary-dark);font-weight:700;margin:4px 0 3px">Best for: catalogues &amp; menus</div>
+<p style="margin:0;font-size:12.5px;color:var(--color-ink-muted)">A smooth, low-sheen coating that keeps photos crisp without glare. The most-handled weight in our range.</p>
+</div>
+</div>
+<div style="border:1px solid var(--color-border);border-radius:var(--radius);overflow:hidden;background:#fff">
+<div class="ph w169" style="border:none;border-radius:0">uncoated sample</div>
+<div style="padding:12px">
+<div style="font-weight:700;font-size:14px">120 gsm Uncoated</div>
+<div style="font-size:11.5px;color:var(--color-primary-dark);font-weight:700;margin:4px 0 3px">Best for: notebooks you write in</div>
+<p style="margin:0;font-size:12.5px;color:var(--color-ink-muted)">A natural, tactile surface that takes pen and pencil cleanly — the warm, matte choice.</p>
+</div>
+</div>
+<div style="border:1px solid var(--color-border);border-radius:var(--radius);overflow:hidden;background:#fff">
+<div class="ph w169" style="border:none;border-radius:0">recycled sample</div>
+<div style="padding:12px">
+<div style="font-weight:700;font-size:14px">Recycled 140 gsm <span class="lab eco" style="vertical-align:middle">Eco</span></div>
+<div style="font-size:11.5px;color:var(--color-primary-dark);font-weight:700;margin:4px 0 3px">Best for: eco-led brands</div>
+<p style="margin:0;font-size:12.5px;color:var(--color-ink-muted)">100% post-consumer fibre, FSC-certified. A visibly sustainable choice that still prints full colour.</p>
+</div>
+</div>
+</div>
+<h3 id="bindings" style="font-size:15px;font-weight:700;margin:6px 0 8px">Binding</h3>
+<div class="grid c2">
+<div style="border:1px solid var(--color-border);border-radius:var(--radius);overflow:hidden;background:#fff;display:flex">
+<div class="ph sq" style="border:none;border-radius:0;width:96px;flex:none">staple render</div>
+<div style="padding:12px">
+<div style="font-weight:700;font-size:14px">Saddle-stitched</div>
+<div style="font-size:11.5px;color:var(--color-primary-dark);font-weight:700;margin:4px 0 3px">Best for: 8–48 pages</div>
+<p style="margin:0;font-size:12.5px;color:var(--color-ink-muted)">Two stitches on the spine. The economical, lie-flat choice for thinner booklets.</p>
+</div>
+</div>
+<div style="border:1px solid var(--color-border);border-radius:var(--radius);overflow:hidden;background:#fff;display:flex">
+<div class="ph sq" style="border:none;border-radius:0;width:96px;flex:none">PUR render</div>
+<div style="padding:12px">
+<div style="font-weight:700;font-size:14px">Perfect (PUR)</div>
+<div style="font-size:11.5px;color:var(--color-primary-dark);font-weight:700;margin:4px 0 3px">Best for: 60+ pages</div>
+<p style="margin:0;font-size:12.5px;color:var(--color-ink-muted)">A square, glued spine you can print on — the premium, book-like finish for thicker runs.</p>
+</div>
+</div>
+</div>
+<div class="note">Cards = <strong>narrative prose only</strong>; no comparison tables (those live in [[B16]], anti-cannib diff-check b16-7). Each card carries a small option visual — the <em>same</em> Contentful asset B5 tiles and B16 column-headers consume (b10-10, one asset / three consumers). Matched by the B5 i-button "Learn more about [attribute]" anchor when a sub-block exists (#papers / #bindings …). Position: after B16, before B9 Reviews. Whole block = V2 (broadened scope); the materials-only narrative stays live for V1.</div>
+</div>
+</div>
+</section>
+<section class="blk" id="blk-b6-ingrid-card">
+<div class="blkh">
+<div><span class="blkname">In-grid promo / editorial card</span> <code class="blkid">promoCard (in-grid · B6)</code></div>
+<span class="tag tag-v2">V2·BUILD</span>
+</div>
+<div class="blkbody">
+<div class="var">
+<div class="vcap">One cell-width card placed inside the product grid — replaces a product cell, never adds one</div>
+<div class="grid c4">
+<div class="pcard">
+<div class="media"><div class="ph p34">product</div></div>
+<div class="body"><div class="pname">A5 Booklet</div><div class="pprice">From <b>£0.42</b></div></div>
+</div>
+<div class="pcard">
+<div class="media"><div class="ph p34">product</div></div>
+<div class="body"><div class="pname">A4 Booklet</div><div class="pprice">From <b>£0.61</b></div></div>
+</div>
+<!-- the in-grid card occupies one product slot -->
+<div class="promo" style="min-height:0;justify-content:center;text-align:center;background:linear-gradient(180deg,var(--color-primary-light),var(--color-primary))">
+<div style="font-weight:800;font-size:15px;line-height:1.25">Not sure which paper?</div>
+<div style="font-size:12px;opacity:.95;margin:6px 0 10px">Our 60-second guide picks it for you.</div>
+<span class="btn alt" style="align-self:center">Read the guide</span>
+</div>
+<div class="pcard">
+<div class="media"><div class="ph p34">product</div></div>
+<div class="body"><div class="pname">Square Booklet</div><div class="pprice">From <b>£0.78</b></div></div>
+</div>
+</div>
+<div class="note">Occupies a single grid cell at a fixed position (op-001) · <strong>replaces</strong> a product tile, never adds an extra cell (keeps row math + CLS intact) · promotional or editorial · <strong>V2 on PLP/FLP</strong>, V1 on PDP cross-sell rails · per-card heading level, no block heading.</div>
+</div>
+</div>
+</section>
+<section class="blk" id="blk-b7-subgrid">
+<div class="blkh">
+<div><span class="blkname">Variant / use-case sub-grid</span> <code class="blkid">g-pagecard (B7)</code></div>
+<span class="tag tag-v2">V2·BUILD</span>
+</div>
+<div class="blkbody">
+<div class="var">
+<div class="vcap">One intent axis below the main grid — PLP: variant/use-case · FLP: shop-by-attribute</div>
+<h2 style="font-size:18px;font-weight:700;margin:0 0 10px">Shop booklets by use case</h2>
+<div class="grid c4">
+<a class="pcard" style="text-decoration:none;color:inherit">
+<div class="media"><div class="ph r43">menus</div></div>
+<div class="body"><div class="pname">Restaurant menus</div></div>
+</a>
+<a class="pcard" style="text-decoration:none;color:inherit">
+<div class="media"><div class="ph r43">programmes</div></div>
+<div class="body"><div class="pname">Event programmes</div></div>
+</a>
+<a class="pcard" style="text-decoration:none;color:inherit">
+<div class="media"><div class="ph r43">catalogues</div></div>
+<div class="body"><div class="pname">Product catalogues</div></div>
+</a>
+<a class="pcard" style="text-decoration:none;color:inherit">
+<div class="media"><div class="ph r43">manuals</div></div>
+<div class="body"><div class="pname">Instruction manuals</div></div>
+</a>
+</div>
+<div class="note">One axis only (op-002) · each card a real crawlable <code class="blkid">&lt;a&gt;</code> to a child page · <strong>≥500 combined monthly volume floor</strong> or the sub-grid is omitted · on PLP this is the <strong>sole surface that promotes an earned-filter page</strong> · FLP variant = "Shop by [attribute]". V2 authoring + render (FLP variant DEFERRED v0.8).</div>
+</div>
+</div>
+</section>
+<section class="blk" id="blk-b7-product-description">
+<div class="blkh">
+<div><span class="blkname">Product description</span> <code class="blkid">product (B7)</code></div>
+<span class="tag tag-keep">V1·GUIDELINE</span>
+</div>
+<div class="blkbody">
+<div class="var">
+<div class="vcap">Brand-voice prose below the configurator + Pros &amp; Cons at the foot (v0.34)</div>
+<h2 style="font-size:20px;font-weight:700;margin:0 0 8px">Custom booklets, printed your way</h2>
+<p style="margin:0 0 14px;color:var(--color-ink-muted);max-width:64ch">Booklets give you room to tell the whole story — a menu, a programme, a product range — in a format people keep. Choose your size, paper and binding, upload your artwork, and we print and deliver across Europe. Need a hand with setup? Our <a href="#" style="color:var(--color-primary);font-weight:600">artwork guidelines</a> walk you through it.</p>
+<div class="grid c2">
+<div style="border:1px solid var(--color-border);border-radius:var(--radius);padding:12px">
+<div style="font-weight:700;font-size:13px;color:var(--color-primary-dark);margin-bottom:6px">Pros</div>
+<ul style="margin:0;padding-left:16px;font-size:12.5px;color:var(--color-ink-muted);line-height:1.7">
+<li>Full-colour, both sides, every weight</li>
+<li>From 8 to 200+ pages</li>
+<li>Next-day delivery available</li>
+</ul>
+</div>
+<div style="border:1px solid var(--color-border);border-radius:var(--radius);padding:12px">
+<div style="font-weight:700;font-size:13px;color:var(--color-ink-faint);margin-bottom:6px">Cons</div>
+<ul style="margin:0;padding-left:16px;font-size:12.5px;color:var(--color-ink-muted);line-height:1.7">
+<li>Minimum order quantities apply</li>
+<li>Page count must be a multiple of 4</li>
+</ul>
+</div>
+</div>
+<div class="note">Sits below the configurator (buyer has stopped converting, started exploring) · <strong>max 2 internal links</strong>, anchor text = destination page's exact name (no "read more") · v0.34 relocated Pros &amp; Cons to the foot of this block (standalone hero placement dropped).</div>
+</div>
+</div>
+</section>
+<section class="blk" id="blk-b8-specs-design">
+<div class="blkh">
+<div><span class="blkname">Specifications + Design</span> <code class="blkid">product (B8)</code></div>
+<span class="tag tag-keep">V1·KEEP</span>
+</div>
+<div class="blkbody">
+<div class="var">
+<div class="vcap">Two tabs — Specifications · Design Guidelines (scannable, kept as-is)</div>
+<div style="display:flex;gap:8px;border-bottom:1px solid var(--color-border);margin-bottom:12px">
+<span style="font-size:13px;font-weight:700;padding:6px 4px;border-bottom:2px solid var(--color-primary);color:var(--color-primary-dark)">Specifications</span>
+<span style="font-size:13px;font-weight:600;padding:6px 4px;color:var(--color-ink-faint)">Design Guidelines</span>
+</div>
+<table class="rtt" style="border:none">
+<tr><td style="border:none;border-bottom:1px solid var(--color-border);font-weight:600;width:40%">Page count</td><td style="border:none;border-bottom:1px solid var(--color-border)">8 – 200 (multiples of 4)</td></tr>
+<tr><td style="border:none;border-bottom:1px solid var(--color-border);font-weight:600">Sizes</td><td style="border:none;border-bottom:1px solid var(--color-border)">A4, A5, A6, Square 210×210</td></tr>
+<tr><td style="border:none;border-bottom:1px solid var(--color-border);font-weight:600">Paper</td><td style="border:none;border-bottom:1px solid var(--color-border)">120–300 gsm silk / uncoated / recycled</td></tr>
+<tr><td style="border:none;font-weight:600">Binding</td><td style="border:none">Saddle-stitched · Perfect (PUR)</td></tr>
+</table>
+<div class="note">Existing block, two tabs · default tab ("Specifications") visible on first paint · values feed schema <code class="blkid">additionalProperty</code> (PropertyValue) · new <code class="blkid">additionalProperty</code> + missing schema fields = V2·BUILD. Scannable list, not prose — sentences belong in B10.</div>
+</div>
+</div>
+</section>
+<section class="blk" id="blk-b13-chat-help">
+<div class="blkh">
+<div><span class="blkname">Chat &amp; Help centre</span> <code class="blkid">B13 · lazy chunk</code></div>
+<span class="tag tag-v2">V2·BUILD</span>
+</div>
+<div class="blkbody">
+<div class="var">
+<div class="vcap">Lazy-loaded support launcher — no SEO weight, loaded after LCP</div>
+<div style="position:relative;height:150px;border:1px dashed var(--color-border);border-radius:var(--radius);background:var(--color-surface-muted)">
+<div style="position:absolute;right:16px;bottom:16px;display:flex;flex-direction:column;align-items:flex-end;gap:10px">
+<div style="background:#fff;border:1px solid var(--color-border);border-radius:var(--radius);padding:10px 12px;font-size:12.5px;max-width:220px;box-shadow:0 4px 14px rgba(0,0,0,.08)">
+<div style="font-weight:700;margin-bottom:2px">Need help with your booklet?</div>
+<div style="color:var(--color-ink-faint)">Chat with us or browse the Help centre.</div>
+</div>
+<button class="btn" style="border-radius:var(--pill);padding:12px 18px">Chat with us</button>
+</div>
+<div style="position:absolute;left:14px;top:14px;font-size:11px;color:var(--color-ink-faint)">page content above the fold — chat injects after first interaction / requestIdleCallback</div>
+</div>
+<div class="note">Lazy chunk (b13-3) <strong>excluded</strong> from the initial 250 KB gzip bundle; loaded after LCP via dynamic <code class="blkid">import()</code> · no crawlable content, no schema, <strong>no SEO weight</strong> · same lazy tier as B9 reviews, B16 matrix and B10 cards.</div>
+</div>
+</div>
+</section>
+</main></div></body></html>

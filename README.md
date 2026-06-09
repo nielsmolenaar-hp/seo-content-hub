@@ -1,52 +1,48 @@
 # SEO & Content — Document Hub (shareable site)
 
-This folder is a **ready-to-publish static website**. Put it on GitHub Pages and you get a
-public URL that renders the HTML and that **anyone with the link can open — no login**.
+A **ready-to-publish static website**. On GitHub Pages it gives a public URL that renders the
+HTML and that **anyone with the link can open — no login**. Each document is included as a
+rendered **HTML page** and as **Markdown source**.
 
 ## What's in here
-- `index.html` — the hub (links to all four documents)
-- `HelloPrint-Page-Content-Model-COMPLETE.html` — full specs
-- `Team-Roster-v2.9.1.html` — team roster
-- `helpcenter-blog-seo-integration-plan.html` — content hierarchy
-- `.nojekyll` — tells GitHub Pages to serve the files as-is
+- `index.html` — the hub (links every document, HTML + Markdown)
+- `HelloPrint-Page-Content-Model-COMPLETE.html` / `.md` — full specs (Markdown is the source of truth)
+- `Team-Roster-v2.9.1.html` / `.md` — team roster
+- `Content-Rebuild-Engine-Plan-v1.0.html` / `.md` — content engine rebuild plan
+- `helpcenter-blog-seo-integration-plan.html` / `.md` — content hierarchy
+- `HelloPrint-Block-Design-Gallery.html` — block & variation gallery (visual companion, HTML only)
+- `README.md`, `.nojekyll`
 
-The **Content Rebuild Engine — Action Plan** stays in Google Docs; the hub links straight to it.
-All three local pages carry a `noindex` tag, so they won't appear in search results — but anyone with the URL can read them.
+In the hub, **Open page** links to the rendered HTML on the Pages site; **Markdown** links to the
+`.md` rendered on GitHub (`github.com/<owner>/<repo>/blob/main/<file>.md`). All HTML pages carry a
+`noindex` tag, so they won't appear in search results — but anyone with the URL can read them.
+
+> The Markdown links assume the repo is `nielsmolenaar-hp/seo-content-hub` on branch `main`.
+> If you fork or rename, update the `blob/main` links in `index.html`.
 
 ---
 
-## Publish to GitHub Pages (~3 minutes, one-time)
+## Publish to GitHub Pages
 
-> The repo must be **public** for "anyone with the link" to work. (GitHub Pages on a *private*
-> repo requires viewers to be logged in with repo access — that would defeat the point.)
-> Do **not** reuse the brain repo — that would expose the whole vault. Make a new repo.
+The repo already exists at **github.com/nielsmolenaar-hp/seo-content-hub**. To update it with this
+full set, replace the files (re-upload all, or `git push`), then enable Pages if you haven't:
 
-### Option A — no terminal (browser only)
-1. On github.com, create a new **public** repo, e.g. `seo-content-hub` (under your account or the Helloprint org).
-2. In the new repo: **Add file → Upload files** → drag in everything from this folder (including the hidden `.nojekyll`) → **Commit changes**.
-3. Repo **Settings → Pages** → Source: **Deploy from a branch** → Branch: `main` / `/ (root)` → **Save**.
-4. Wait ~1 minute. Your site is live at `https://<owner>.github.io/seo-content-hub/`.
-
-### Option B — command line
+**Web UI:** repo → **Add file → Upload files** → drag in everything from this folder → **Commit**.
+**CLI:**
 ```bash
 cd seo-content-hub
 git init -b main
 git add .
-git commit -m "SEO & Content document hub"
-# create an EMPTY public repo on github.com first, then:
-git remote add origin https://github.com/<owner>/seo-content-hub.git
-git push -u origin main
+git commit -m "SEO & Content hub — HTML + Markdown, all docs"
+git remote add origin https://github.com/nielsmolenaar-hp/seo-content-hub.git
+git push -u origin main      # use --force only if replacing existing history
 ```
-Then do step 3 above (Settings → Pages → main / root → Save).
 
----
+Then: **Settings → Pages → Deploy from a branch → `main` → `/ (root)` → Save.**
+Live at `https://nielsmolenaar-hp.github.io/seo-content-hub/` within ~1 minute.
 
-## Sharing
-Send people this link: `https://<owner>.github.io/seo-content-hub/`
-
-## Updating a document later
-Replace the file in the repo (re-upload or `git push`); Pages redeploys automatically in ~1 minute.
-
-## To make it private again
-Delete the repo, or set it to private (the Pages site stops serving publicly). To remove a single
-doc, delete that file from the repo.
+## Notes
+- The repo must stay **public** for anyone-with-link access.
+- `.nojekyll` is a hidden file; Finder may hide it on drag-and-drop. It's optional here (no filenames
+  start with `_`), but the CLI push includes it automatically.
+- To update a doc later: replace its file(s) and re-deploy (Pages rebuilds in ~1 min).
