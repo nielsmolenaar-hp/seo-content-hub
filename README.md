@@ -11,6 +11,10 @@ rendered **HTML page** and as **Markdown source**.
 - `Content-Rebuild-Engine-Plan-v1.0.html` / `.md` — content engine rebuild plan
 - `helpcenter-blog-seo-integration-plan.html` / `.md` — content hierarchy
 - `HelloPrint-Block-Design-Gallery.html` — block & variation gallery (visual companion, HTML only)
+- `Design-Brief_Batch1_AGENT-BUILD-PROMPTS.md` — Batch 1: shared blocks + PLP pages (DA-1 / DA-2)
+- `Design-Brief_Batch2_FLP_AGENT-BUILD-PROMPTS.md` — Batch 2: FLP filter chrome (DA-3 / DA-4)
+- `Design-Brief_Batch3_PDP-refresh_AGENT-BUILD-PROMPTS.md` — Batch 3: PDP refresh (DA-5)
+- `Design-Brief_Batch4_V2_AGENT-BUILD-PROMPTS.md` — Batch 4: V2 blocks (DA-6)
 - `README.md`, `.nojekyll`
 
 In the hub, **Open page** links to the rendered HTML on the Pages site; **Markdown** links to the

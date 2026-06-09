@@ -69,6 +69,22 @@ h1{font-size:var(--fs-h1); line-height:var(--lh-h1); font-weight:700; letter-spa
 .link-sub svg{width:13px; height:13px;}
 .fmt-note{font-size:var(--fs-xs); line-height:var(--lh-xs); color:var(--color-ink-faint);}
 
+/* Design-brief batches */
+.briefs{max-width:var(--container); margin:8px auto 0; padding:24px 24px 8px;}
+.section-head{margin-bottom:18px;}
+.section-title{font-size:var(--fs-h3); line-height:var(--lh-h3); font-weight:700; margin:0 0 6px;}
+.section-sub{font-size:var(--fs-sm); line-height:21px; color:var(--color-ink-faint); max-width:720px; margin:0;}
+.brief-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px;}
+@media (max-width:760px){ .brief-grid{grid-template-columns:1fr;} }
+.brief-card{background:var(--color-surface); border:1px solid var(--color-border); border-radius:var(--radius-card); padding:18px; display:flex; flex-direction:column;}
+.brief-top{display:flex; align-items:center; gap:8px; margin-bottom:10px;}
+.brief-num{font-size:var(--fs-xs); font-weight:700; color:#fff; background:var(--color-primary); border-radius:var(--radius-pill); padding:3px 10px; white-space:nowrap;}
+.brief-scope{font-size:var(--fs-xs); font-weight:600; color:var(--color-ink-faint); text-transform:uppercase; letter-spacing:.05em;}
+.brief-title{font-size:var(--fs-body); line-height:22px; font-weight:700; margin:0 0 8px; color:var(--color-ink);}
+.brief-desc{font-size:var(--fs-sm); line-height:20px; color:var(--color-ink-muted); margin:0 0 14px;}
+.brief-foot{margin-top:auto; display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap;}
+.tickets{font-size:var(--fs-xs); color:var(--color-ink-faint); font-weight:500;}
+
 .note{max-width:var(--container); margin:18px auto 0; padding:0 24px;}
 .note-inner{display:flex; gap:12px; align-items:flex-start; background:#fff; border:1px solid var(--color-border); border-left:3px solid var(--color-primary); border-radius:12px; padding:16px 18px;}
 .note-inner svg{width:18px; height:18px; color:var(--color-primary); flex:0 0 18px; margin-top:2px;}
@@ -99,7 +115,7 @@ footer{max-width:var(--container); margin:0 auto; padding:36px 24px 56px;}
   <h1>SEO &amp; Content — Document Hub</h1>
   <p class="lede">One place for the reference documents — the full page-content spec, the agent team roster, the content-engine rebuild plan, the content-hierarchy plan and the block gallery. Each is available as a rendered page and as Markdown source.</p>
   <div class="meta-line">
-    <span>5 documents</span><span class="sep">·</span>
+    <span>5 documents + 4 design briefs</span><span class="sep">·</span>
     <span>HTML page + Markdown source</span><span class="sep">·</span>
     <span>Open to anyone with the link</span>
   </div>
@@ -231,6 +247,56 @@ footer{max-width:var(--container); margin:0 auto; padding:36px 24px 56px;}
     </div>
   </article>
 
+</section>
+
+<section class="briefs">
+  <div class="section-head">
+    <h2 class="section-title">Design Briefs — Agent Build Prompts</h2>
+    <p class="section-sub">Four batches derived from the Linear tickets, split so each stays manageable. Batch 1 establishes the design system and output contract; Batches 2–4 reuse it. Markdown, rendered on GitHub.</p>
+  </div>
+  <div class="brief-grid">
+
+    <article class="brief-card">
+      <div class="brief-top"><span class="brief-num">Batch 1</span><span class="brief-scope">DA-1 blocks · DA-2 PLP</span></div>
+      <h3 class="brief-title">Shared blocks + PLP pages</h3>
+      <p class="brief-desc">The Setup prompt (design system + output contract) plus build prompts for the shared blocks and PLP pages. Start here — the other batches reuse this Setup.</p>
+      <div class="brief-foot">
+        <span class="tickets">HEL-318 · 326 · 330 · 333 · 334</span>
+        <a class="link-sub" href="https://github.com/nielsmolenaar-hp/seo-content-hub/blob/main/Design-Brief_Batch1_AGENT-BUILD-PROMPTS.md" target="_blank" rel="noopener">Open<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+      </div>
+    </article>
+
+    <article class="brief-card">
+      <div class="brief-top"><span class="brief-num">Batch 2</span><span class="brief-scope">DA-3 · DA-4 · FLP</span></div>
+      <h3 class="brief-title">FLP filter chrome</h3>
+      <p class="brief-desc">The FLP filter panel's five-state facet contract plus the AZ Contentful editor (the internal authoring tool). Sits on top of a Batch-1 PLP.</p>
+      <div class="brief-foot">
+        <span class="tickets">HEL-318</span>
+        <a class="link-sub" href="https://github.com/nielsmolenaar-hp/seo-content-hub/blob/main/Design-Brief_Batch2_FLP_AGENT-BUILD-PROMPTS.md" target="_blank" rel="noopener">Open<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+      </div>
+    </article>
+
+    <article class="brief-card">
+      <div class="brief-top"><span class="brief-num">Batch 3</span><span class="brief-scope">DA-5 · PDP refresh</span></div>
+      <h3 class="brief-title">PDP refresh</h3>
+      <p class="brief-desc">Deltas against the already-shipped PDP — re-skin the changed blocks and add the two missing slots. Feeds the PDP follow-up tickets, not the closed epic.</p>
+      <div class="brief-foot">
+        <span class="tickets">HEL-306 · HEL-280</span>
+        <a class="link-sub" href="https://github.com/nielsmolenaar-hp/seo-content-hub/blob/main/Design-Brief_Batch3_PDP-refresh_AGENT-BUILD-PROMPTS.md" target="_blank" rel="noopener">Open<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+      </div>
+    </article>
+
+    <article class="brief-card">
+      <div class="brief-top"><span class="brief-num">Batch 4</span><span class="brief-scope">DA-6 · V2</span></div>
+      <h3 class="brief-title">V2 blocks</h3>
+      <p class="brief-desc">The V2-only blocks (specs matrix, config deep-dive, reviews, chat &amp; help, person). Lowest priority — build after Batches 1–3.</p>
+      <div class="brief-foot">
+        <span class="tickets">V2 · feeds V2 tickets</span>
+        <a class="link-sub" href="https://github.com/nielsmolenaar-hp/seo-content-hub/blob/main/Design-Brief_Batch4_V2_AGENT-BUILD-PROMPTS.md" target="_blank" rel="noopener">Open<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+      </div>
+    </article>
+
+  </div>
 </section>
 
 <div class="note">
