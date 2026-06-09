@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>SEO &amp; Content — Document Hub · HelloPrint</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root{
+  --font-sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --fs-h1:32px; --lh-h1:40px;
+  --fs-h3:20px; --lh-h3:28px;
+  --fs-body:16px; --lh-body:26px;
+  --fs-sm:14px; --lh-sm:20px;
+  --fs-xs:12px; --lh-xs:16px;
+  --color-primary:#008539; --color-primary-dark:#006B2D; --color-primary-light:#00A651;
+  --color-ink:#191919; --color-ink-muted:#333333; --color-ink-faint:#555555;
+  --color-surface:#ffffff; --color-surface-muted:#f8f8f8; --color-border:#e5e5e5;
+  --color-badge-success-bg:#e8f5e9;
+  --radius-card:12px; --radius-card-lg:16px; --radius-pill:9999px;
+  --shadow-card:0 1px 2px 0 rgb(0 0 0 / .05);
+  --shadow-card-hover:0 10px 15px -3px rgb(0 0 0 / .1),0 4px 6px -4px rgb(0 0 0 / .1);
+  --container:1100px;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{font-family:var(--font-sans); font-size:var(--fs-body); line-height:var(--lh-body); color:var(--color-ink); background:var(--color-surface-muted); -webkit-font-smoothing:antialiased;}
+a{color:var(--color-primary); text-decoration:none;}
+a:hover{color:var(--color-primary-dark);}
+
+.header-bar{background:var(--color-ink); color:#fff;}
+.header-inner{max-width:var(--container); margin:0 auto; padding:0 24px; height:60px; display:flex; align-items:center; justify-content:space-between;}
+.brand{display:flex; align-items:center; gap:10px;}
+.brand .hmark{width:24px; height:24px; color:#fff; display:block;}
+.brand .word{font-weight:700; font-size:18px; letter-spacing:-.01em; color:#fff;}
+.header-tag{font-size:var(--fs-xs); line-height:var(--lh-xs); font-weight:500; color:rgba(255,255,255,.7); text-transform:uppercase; letter-spacing:.06em;}
+
+.hero{max-width:var(--container); margin:0 auto; padding:48px 24px 8px;}
+.eyebrow{display:inline-flex; align-items:center; gap:8px; font-size:var(--fs-xs); line-height:1; font-weight:600; text-transform:uppercase; letter-spacing:.08em; color:var(--color-primary-dark); background:var(--color-badge-success-bg); padding:6px 12px; border-radius:var(--radius-pill); margin-bottom:18px;}
+.eyebrow .dot{width:6px; height:6px; border-radius:50%; background:var(--color-primary);}
+h1{font-size:var(--fs-h1); line-height:var(--lh-h1); font-weight:700; letter-spacing:-.01em; margin:0 0 12px;}
+.lede{font-size:var(--fs-body); line-height:var(--lh-body); color:var(--color-ink-muted); max-width:680px; margin:0;}
+.meta-line{margin-top:18px; font-size:var(--fs-sm); line-height:var(--lh-sm); color:var(--color-ink-faint); display:flex; gap:8px; flex-wrap:wrap; align-items:center;}
+.meta-line .sep{color:var(--color-border);}
+
+.grid{max-width:var(--container); margin:0 auto; padding:28px 24px 8px; display:grid; grid-template-columns:repeat(2,1fr); gap:20px;}
+@media (max-width:760px){ .grid{grid-template-columns:1fr;} }
+
+.doc-card{background:var(--color-surface); border:1px solid var(--color-border); border-radius:var(--radius-card-lg); box-shadow:var(--shadow-card); padding:24px; display:flex; flex-direction:column; transition:box-shadow 200ms, border-color 200ms, transform 200ms;}
+.doc-card:hover{box-shadow:var(--shadow-card-hover); border-color:#d6d6d6; transform:translateY(-2px);}
+.card-top{display:flex; align-items:flex-start; justify-content:space-between; gap:12px; margin-bottom:14px;}
+.icon-badge{width:44px; height:44px; flex:0 0 44px; border-radius:12px; background:var(--color-badge-success-bg); color:var(--color-primary-dark); display:flex; align-items:center; justify-content:center;}
+.icon-badge svg{width:22px; height:22px;}
+.pill{font-size:var(--fs-xs); line-height:1; font-weight:600; padding:6px 10px; border-radius:var(--radius-pill); white-space:nowrap; background:var(--color-surface-muted); color:var(--color-ink-muted); border:1px solid var(--color-border);}
+.pill.primary{background:var(--color-primary); color:#fff; border-color:var(--color-primary);}
+.kicker{font-size:var(--fs-xs); line-height:1; font-weight:600; text-transform:uppercase; letter-spacing:.07em; color:var(--color-primary-dark); margin:0 0 6px;}
+.doc-title{font-size:var(--fs-h3); line-height:var(--lh-h3); font-weight:700; margin:0 0 10px; color:var(--color-ink);}
+.doc-desc{font-size:var(--fs-sm); line-height:21px; color:var(--color-ink-muted); margin:0 0 18px;}
+.card-actions{margin-top:auto; display:flex; align-items:center; gap:12px;}
+.btn-primary{display:inline-flex; align-items:center; gap:8px; background:var(--color-primary); color:#fff; font-weight:600; font-size:var(--fs-sm); padding:10px 20px; border-radius:var(--radius-pill); transition:background 200ms;}
+.btn-primary:hover{background:var(--color-primary-dark); color:#fff;}
+.btn-primary svg{width:16px; height:16px;}
+.where{font-size:var(--fs-xs); line-height:var(--lh-xs); color:var(--color-ink-faint);}
+
+.note{max-width:var(--container); margin:18px auto 0; padding:0 24px;}
+.note-inner{display:flex; gap:12px; align-items:flex-start; background:#fff; border:1px solid var(--color-border); border-left:3px solid var(--color-primary); border-radius:12px; padding:16px 18px;}
+.note-inner svg{width:18px; height:18px; color:var(--color-primary); flex:0 0 18px; margin-top:2px;}
+.note-inner p{margin:0; font-size:var(--fs-sm); line-height:21px; color:var(--color-ink-muted);}
+
+footer{max-width:var(--container); margin:0 auto; padding:36px 24px 56px;}
+.foot-line{font-size:var(--fs-xs); line-height:var(--lh-xs); color:var(--color-ink-faint);}
+</style>
+</head>
+<body>
+
+<div class="header-bar">
+  <div class="header-inner">
+    <div class="brand">
+      <svg class="hmark" viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g transform="translate(0,260) scale(0.1,-0.1)" fill="currentColor" stroke="none">
+          <path d="M757 2584 c-1 -1 -28 -5 -60 -8 -114 -14 -266 -73 -376 -148 -174 -120 -331 -374 -269 -436 34 -34 90 -10 295 130 287 194 465 219 540 75 42 -82 32 -214 -34 -427 -35 -113 -142 -413 -151 -422 -4 -4 -86 -10 -182 -13 -288 -10 -343 -18 -381 -56 -28 -28 -24 -59 20 -125 84 -127 111 -139 303 -131 l127 4 -10 -26 c-6 -14 -44 -116 -86 -226 -41 -110 -95 -249 -118 -310 -59 -149 -74 -254 -50 -349 18 -69 53 -101 110 -100 91 3 185 87 254 229 40 81 57 128 208 565 46 135 87 248 91 252 6 6 37 10 182 24 30 3 64 7 75 9 11 1 56 6 100 10 44 4 91 8 104 10 13 3 61 7 105 11 45 3 84 8 89 11 9 6 10 8 -13 -72 -29 -99 -58 -225 -79 -333 -65 -338 40 -594 264 -645 61 -14 79 -14 175 -2 149 20 307 98 487 242 l93 74 -24 47 c-27 54 -51 122 -55 153 0 6 -25 -11 -53 -37 -72 -64 -187 -138 -256 -164 -44 -17 -71 -21 -119 -17 -152 12 -187 115 -137 402 13 76 93 377 102 387 4 4 34 9 67 12 33 3 71 8 85 11 14 2 57 7 95 10 185 15 234 45 215 131 -10 45 -40 73 -79 75 -37 2 -207 -2 -263 -6 -27 -2 -48 0 -48 5 0 19 139 430 203 601 74 198 84 235 81 299 -5 95 -48 140 -137 140 -133 0 -197 -85 -312 -420 -32 -91 -61 -174 -66 -185 -4 -11 -40 -119 -79 -240 l-70 -220 -48 -1 c-44 -1 -193 -7 -469 -20 l-122 -6 8 29 c59 199 74 254 95 343 34 142 56 269 63 365 19 282 -147 469 -435 488 -29 2 -53 3 -55 1z"></path>
+        </g>
+      </svg>
+      <span class="word">Helloprint</span>
+    </div>
+    <span class="header-tag">SEO &amp; Content · Document Hub</span>
+  </div>
+</div>
+
+<section class="hero">
+  <span class="eyebrow"><span class="dot"></span> SEO &amp; Content Frontend</span>
+  <h1>SEO &amp; Content — Document Hub</h1>
+  <p class="lede">One place for the four reference documents — the full page-content spec, the agent team roster, the content-engine rebuild plan and the content-hierarchy plan. Open any of them below.</p>
+  <div class="meta-line">
+    <span>4 documents</span><span class="sep">·</span>
+    <span>3 published here · 1 in Google Docs</span><span class="sep">·</span>
+    <span>Open to anyone with the link</span>
+  </div>
+</section>
+
+<section class="grid">
+
+  <!-- 1. Full Specs -->
+  <article class="doc-card">
+    <div class="card-top">
+      <div class="icon-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
+      </div>
+      <span class="pill primary">Canonical</span>
+    </div>
+    <p class="kicker">Full specs document</p>
+    <h2 class="doc-title">Page Content Model — Complete</h2>
+    <p class="doc-desc">The canonical, consolidated spec for PDP, PLP and FLP — the page-type map, content models and both block-variation catalogs in one document. The single source of truth.</p>
+    <div class="card-actions">
+      <a class="btn-primary" href="./HelloPrint-Page-Content-Model-COMPLETE.html" target="_blank" rel="noopener">
+        Open document
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <span class="where">Page Content Model</span>
+    </div>
+  </article>
+
+  <!-- 2. Team Roster -->
+  <article class="doc-card">
+    <div class="card-top">
+      <div class="icon-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <span class="pill">v2.9.1</span>
+    </div>
+    <p class="kicker">Team roster document</p>
+    <h2 class="doc-title">SEO &amp; Content Agentic Team — Manifesto</h2>
+    <p class="doc-desc">The mission, operating model and full agent roster for the SEO &amp; content team — built around organic search as Helloprint's primary growth engine.</p>
+    <div class="card-actions">
+      <a class="btn-primary" href="./Team-Roster-v2.9.1.html" target="_blank" rel="noopener">
+        Open document
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <span class="where">Agent team</span>
+    </div>
+  </article>
+
+  <!-- 3. Content Engine Rebuild -->
+  <article class="doc-card">
+    <div class="card-top">
+      <div class="icon-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+      </div>
+      <span class="pill">v1.0 · Google Doc</span>
+    </div>
+    <p class="kicker">Content engine rebuild document</p>
+    <h2 class="doc-title">Content Rebuild Engine — Action Plan</h2>
+    <p class="doc-desc">The plan to rebuild Helloprint's content engine: a global Core plus local docs on a shared 8-part backbone, tone-dials for local voice, and FSC / sustainability rules. Lives in Drive for brand-director sign-off.</p>
+    <div class="card-actions">
+      <a class="btn-primary" href="https://docs.google.com/document/d/1oXuhkUqVaRsPOUHvWkx96hzoiGSdCpusYnipDrVRdKQ/edit" target="_blank" rel="noopener">
+        Open in Google Docs
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
+      <span class="where">Google Drive</span>
+    </div>
+  </article>
+
+  <!-- 4. Content Hierarchy -->
+  <article class="doc-card">
+    <div class="card-top">
+      <div class="icon-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+      </div>
+      <span class="pill">SEO integration</span>
+    </div>
+    <p class="kicker">Content hierarchy document</p>
+    <h2 class="doc-title">Content Hierarchy &amp; SEO Integration Plan</h2>
+    <p class="doc-desc">How helpcenter, blog and SEO content fit together — the site-hierarchy model and a 13-bucket content model, with the SEO integration plan for each layer.</p>
+    <div class="card-actions">
+      <a class="btn-primary" href="./helpcenter-blog-seo-integration-plan.html" target="_blank" rel="noopener">
+        Open document
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <span class="where">Content hierarchy</span>
+    </div>
+  </article>
+
+</section>
+
+<div class="note">
+  <div class="note-inner">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+    <p>This hub and its three documents are published as a static site, so anyone with the link can open them in the browser — no login. They carry a <strong>noindex</strong> tag, so they won't show up in search results. The Content Rebuild plan opens in Google Docs (shared separately).</p>
+  </div>
+</div>
+
+<footer>
+  <p class="foot-line">HelloPrint · SEO &amp; Content Frontend · Internal document hub</p>
+</footer>
+
+</body>
+</html>
